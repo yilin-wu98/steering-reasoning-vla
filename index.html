@@ -86,7 +86,7 @@ const Semanticood1ObjectList = [
 
   const IDTextList = [
     "Both the training and test instruction is put both the alphabet soup and the tomato sauce in the basket.",
-    "Both the training and test instruction is put both the cream cheese box and the butter in the basket.",
+    "Both the training and test instruction is <strong><em>put both the cream cheese box and the butter in the basket</em></strong>.",
     "Both the training and test instruction is turn on the stove and put the moka pot on it.",
     "Both the training and test instruction is put the black bowl in the bottom drawer of the cabinet and close it.",
     "Both the training and test instruction is put the white mug on the left plate and the yellow and white mug on the right plate.",
@@ -114,70 +114,70 @@ const Semanticood1ObjectList = [
 
   ]
   const ComposeTextList = [
-    "The training instruction is 1) put both the cream cheese box and the butter in the basket. 2) put the alphabet soup in the basket.\n The test instruction is put both the alphabet soup and the butter in the basket.",
-    "The training instruction is 1) put both the cream cheese box and the butter in the basket. 2) put the tomato sauce in the basket.\n The test instruction is put both the cream cheese box and the tomato sauce in the basket.",
-    "The training instruction is 1) put both the cream cheese box and the butter in the basket. 2) put the orange juice in the basket. \nThe test instruction is put both the orange juice and the butter in the basket.",
-    "The training instruction is 1) put both the alphabet soup and the tomato sauce in the basket. 2) put the orange juice in the basket.\n The test instruction is put both the orange juice and the tomato sauce in the basket.",
-    "The training instruction is 1) put both the cream cheese box and the butter in the basket. 2) put the milk in the basket. \nThe test instruction is put both the milk and the butter in the basket.",
-    "The training instruction is 1) put both the alphabet soup and the tomato sauce in the basket. 2) put the milk in the basket. \nThe test instruction is put both the milk and the tomato sauce in the basket.",
-    "The training instruction is 1) put both the cream cheese box and the butter in the basket. 2) put the tomato sauce in the basket. \nThe test instruction is put both the tomato sauce and the butter in the basket.",
-    "The training instruction is 1) put both the alphabet soup and the cream cheese box in the basket. 2) put the ketchup in the basket. \nThe test instruction is put both the ketchup and the cream cheese box in the basket.",
-    "The training instruction is 1) put both the alphabet soup and the cream cheese box in the basket. 2) put the tomato sauce in the basket.\n The test instruction is put both the tomato sauce and the cream cheese box in the basket.",
-    "The training instruction is 1) put the black bowl in the bottom drawer of the cabinet and close it. 2) put the wine bottle in the bottom drawer of the cabinet.\n The test instruction is put the wine bottle in the bottom drawer of the cabinet and close it.",
-    "The training instruction is 1) put the white mug on the plate and put the chocolate pudding to the right of the plate. 2) put the red mug on the plate. 3) put the chocolate pudding to the right of the plate.\n The test instruction is put the red mug on the plate and put the chocolate pudding to the right of the plate.",
-    "The training instruction is 1) put the white mug on the plate and put the chocolate pudding to the right of the plate. 2) put the red mug on the plate. 3) put the chocolate pudding to the left of the plate.\n The test instruction is put the red mug on the plate and put the chocolate pudding to the left of the plate.",
-    "The training instruction is 1) put the white mug on the left plate and the yellow and white mug on the right plate. 2) put the red mug on the left plate.\n The test instruction is put the red mug on the left plate and put the yellow and white mug on the right plate."
+    "The training instruction is <strong><em>1) put both the cream cheese box and the butter in the basket. 2) put the alphabet soup in the basket.</em></strong><br> The test instruction is <strong><em>put both the alphabet soup and the butter in the basket.</em></strong>",
+    "The training instruction is <strong><em>1) put both the cream cheese box and the butter in the basket. 2) put the tomato sauce in the basket.</em></strong><br> The test instruction is <strong><em>put both the cream cheese box and the tomato sauce in the basket.</em></strong>",
+    "The training instruction is <strong><em>1) put both the cream cheese box and the butter in the basket. 2) put the orange juice in the basket.</em></strong><br> The test instruction is <strong><em>put both the orange juice and the butter in the basket.</em></strong>",
+    "The training instruction is <strong><em>1) put both the alphabet soup and the tomato sauce in the basket. 2) put the orange juice in the basket.</em></strong><br> The test instruction is <strong><em>put both the orange juice and the tomato sauce in the basket.</em></strong>",
+    "The training instruction is <strong><em>1) put both the cream cheese box and the butter in the basket. 2) put the milk in the basket.</em></strong><br> The test instruction is <strong><em>put both the milk and the butter in the basket.</em></strong>",
+    "The training instruction is <strong><em>1) put both the alphabet soup and the tomato sauce in the basket. 2) put the milk in the basket.</em></strong><br> The test instruction is <strong><em>put both the milk and the tomato sauce in the basket.</em></strong>",
+    "The training instruction is <strong><em>1) put both the cream cheese box and the butter in the basket. 2) put the tomato sauce in the basket.</em></strong><br> The test instruction is <strong><em>put both the tomato sauce and the butter in the basket.</em></strong>",
+    "The training instruction is <strong><em>1) put both the alphabet soup and the cream cheese box in the basket. 2) put the ketchup in the basket.</em></strong><br> The test instruction is <strong><em>put both the ketchup and the cream cheese box in the basket.</em></strong>",
+    "The training instruction is <strong><em>1) put both the alphabet soup and the cream cheese box in the basket. 2) put the tomato sauce in the basket.</em></strong><br> The test instruction is <strong><em>put both the tomato sauce and the cream cheese box in the basket.</em></strong>",
+    "The training instruction is <strong><em>1) put the black bowl in the bottom drawer of the cabinet and close it. 2) put the wine bottle in the bottom drawer of the cabinet.</em></strong><br> The test instruction is <strong><em>put the wine bottle in the bottom drawer of the cabinet and close it.</em></strong>",
+    "The training instruction is <strong><em>1) put the white mug on the plate and put the chocolate pudding to the right of the plate. 2) put the red mug on the plate. 3) put the chocolate pudding to the right of the plate.</em></strong><br> The test instruction is <strong><em>put the red mug on the plate and put the chocolate pudding to the right of the plate.</em></strong>",
+    "The training instruction is <strong><em>1) put the white mug on the plate and put the chocolate pudding to the right of the plate. 2) put the red mug on the plate. 3) put the chocolate pudding to the left of the plate.</em></strong><br> The test instruction is <strong><em>put the red mug on the plate and put the chocolate pudding to the left of the plate.</em></strong>",
+    "The training instruction is <strong><em>1) put the white mug on the left plate and the yellow and white mug on the right plate. 2) put the red mug on the left plate.</em></strong><br> The test instruction is <strong><em>put the red mug on the left plate and put the yellow and white mug on the right plate.</em></strong>"
 
   ]
 
   const Visualood1TextList = [
-    "Both training and test instructions are to put both the alphabet soup and the tomato sauce in the basket.",
-    "Both training and test instructions are to put both the cream cheese box and the butter in the basket.",
-    "Both training and test instructions are to turn on the stove and put the moka pot on it.",
-    "Both training and test instructions are to put the black bowl in the bottom drawer of the cabinet and close it.",
-    "Both training and test instructions are to put the white mug on the left plate and the yellow and white mug on the right plate.",
-    "Both training and test instructions are to pick up the book and place it in the back compartment of the caddy.",
-    "Both training and test instructions are to put the white mug on the plate and put the chocolate pudding to the right of the plate.",
-    "Both training and test instructions are to put both alphabet soup and cream cheese box in the basket.",
-    "Both training and test instructions are to put both moka pots on the stove.",    
-    "Both training and test instructions are to put the yellow and white mug in the microwave and close it."
+    "Both training and test instructions are <strong><em>put both the alphabet soup and the tomato sauce in the basket.</em></strong>",
+    "Both training and test instructions are <strong><em>put both the cream cheese box and the butter in the basket.</em></strong>",
+    "Both training and test instructions are <strong><em>turn on the stove and put the moka pot on it.</em></strong>",
+    "Both training and test instructions are <strong><em>put the black bowl in the bottom drawer of the cabinet and close it.</em></strong>",
+    "Both training and test instructions are <strong><em>put the white mug on the left plate and the yellow and white mug on the right plate.</em></strong>",
+    "Both training and test instructions are <strong><em>pick up the book and place it in the back compartment of the caddy.</em></strong>",
+    "Both training and test instructions are <strong><em>put the white mug on the plate and put the chocolate pudding to the right of the plate.</em></strong>",
+    "Both training and test instructions are <strong><em>put both alphabet soup and cream cheese box in the basket.</em></strong>",
+    "Both training and test instructions are <strong><em>put both moka pots on the stove.</em></strong>",    
+    "Both training and test instructions are <strong><em>put the yellow and white mug in the microwave and close it.</em></strong>"
   ];
 
-  constVisualood2TextList = [
-    "Both training and test instructions are to put both the alphabet soup and the tomato sauce in the basket.",
-    "Both training and test instructions are to put both the cream cheese box and the butter in the basket.",
-    "Both training and test instructions are to turn on the stove and put the moka pot on it.",
-    "Both training and test instructions are to put the black bowl in the bottom drawer of the cabinet and close it.",
-    "Both training and test instructions are to put the white mug on the left plate and the yellow and white mug on the right plate.",
-    "Both training and test instructions are to pick up the book and place it in the back compartment of the caddy.",
-    "Both training and test instructions are to put the white mug on the plate and put the chocolate pudding to the right of the plate.",
-    "Both training and test instructions are to put both alphabet soup and cream cheese box in the basket.",
-    "Both training and test instructions are to put both moka pots on the stove.",    
-    "Both training and test instructions are to put the yellow and white mug in the microwave and close it."
+  const Visualood2TextList = [
+    "Both training and test instructions are <strong><em>put both the alphabet soup and the tomato sauce in the basket.</em></strong>",
+    "Both training and test instructions are <strong><em>put both the cream cheese box and the butter in the basket.</em></strong>",
+    "Both training and test instructions are <strong><em>turn on the stove and put the moka pot on it.</em></strong>",
+    "Both training and test instructions are <strong><em>put the black bowl in the bottom drawer of the cabinet and close it.</em></strong>",
+    "Both training and test instructions are <strong><em>put the white mug on the left plate and the yellow and white mug on the right plate.</em></strong>",
+    "Both training and test instructions are <strong><em>pick up the book and place it in the back compartment of the caddy.</em></strong>",
+    "Both training and test instructions are <strong><em>put the white mug on the plate and put the chocolate pudding to the right of the plate.</em></strong>",
+    "Both training and test instructions are <strong><em>put both alphabet soup and cream cheese box in the basket.</em></strong>",
+    "Both training and test instructions are <strong><em>put both moka pots on the stove.</em></strong>",    
+    "Both training and test instructions are <strong><em>put the yellow and white mug in the microwave and close it.</em></strong>"
   ];
 	const Semanticood2TextList = [
-		"The training task instruction is to put both the alphabet soup and the tomato sauce in the basket.\nThe test instruction is rephrased to put both the alphabet soup and the tomato sauce in the basket.",
-		"The training task instruction is to put both the cream cheese box and the butter in the basket.\nThe test instruction is rephrased to put both the box of cheese and the box of butter in the basket.",
-		"The training task instruction is to turn on the stove and put the moka pot on it.\nThe test instruction is rephrased to turn on the cooktop and place the moka machine on it.",
-    "The training task instruction is to put the black bowl in the bottom drawer of the cabinet and close it.\nThe test instruction is rephrased to put the middle bowl to the lowest drawer and close it.",
-    "The training task instruction is to put the white mug on the left plate and the yellow and white mug on the right plate.\nThe test instruction is rephrased to put the pure white cup on the left plate and put the other one with the yellow handle on the right plate.",
-    "The training task instruction is to pick up the book and place it in the back compartment of the caddy.\nThe test instruction is rephrased to pick up the right book and put it in the rear part of the caddy.",
-    "The training task instruction is to put the white mug on the plate and put the chocolate pudding to the right of the plate.\nThe test instruction is rephrased to put the pure white cup on the middle plate and put the brown chocolate to the right of the plate.",
-    "The training task instruction is to put both alphabet soup and cream cheese box in the basket.\nThe test instruction is rephrased to put both the can of soup and box of cheese in the basket.",
-    "The training task instruction is to put both moka pots on the stove.\nThe test instruction is rephrased to put both moka coffee makers on the cooktop.",
-    "The training task instruction is to put the yellow and white mug in the microwave and close it.\nThe test instruction is rephrased to put the middle mug inside the microwave and close the door."
+		"The training task instruction is <strong><em>put both the alphabet soup and the tomato sauce in the basket.</em></strong>\nThe test instruction is rephrased to <strong><em>put both the alphabet soup and the tomato sauce in the basket.</em></strong>",
+		"The training task instruction is <strong><em>put both the cream cheese box and the butter in the basket.</em></strong>\nThe test instruction is rephrased to <strong><em>put both the box of cheese and the box of butter in the basket.</em></strong>",
+		"The training task instruction is <strong><em>turn on the stove and put the moka pot on it.</em></strong>\nThe test instruction is rephrased to <strong><em>turn on the cooktop and place the moka machine on it.</em></strong>",
+    "The training task instruction is <strong><em>put the black bowl in the bottom drawer of the cabinet and close it.</em></strong>\nThe test instruction is rephrased to <strong><em>put the middle bowl to the lowest drawer and close it.</em></strong>",
+    "The training task instruction is <strong><em>put the white mug on the left plate and the yellow and white mug on the right plate.</em></strong>\nThe test instruction is rephrased to <strong><em>put the pure white cup on the left plate and put the other one with the yellow handle on the right plate.</em></strong>",
+    "The training task instruction is <strong><em>pick up the book and place it in the back compartment of the caddy.</em></strong>\nThe test instruction is rephrased to <strong><em>pick up the right book and put it in the rear part of the caddy.</em></strong>",
+    "The training task instruction is <strong><em>put the white mug on the plate and put the chocolate pudding to the right of the plate.</em></strong>\nThe test instruction is rephrased to <strong><em>put the pure white cup on the middle plate and put the brown chocolate to the right of the plate.</em></strong>",
+    "The training task instruction is <strong><em>put both alphabet soup and cream cheese box in the basket.</em></strong>\nThe test instruction is rephrased to <strong><em>put both the can of soup and box of cheese in the basket.</em></strong>",
+    "The training task instruction is <strong><em>put both moka pots on the stove.</em></strong>\nThe test instruction is rephrased to <strong><em>put both moka coffee makers on the cooktop.</em></strong>",
+    "The training task instruction is <strong><em>put the yellow and white mug in the microwave and close it.</em></strong>\nThe test instruction is rephrased to <strong><em>put the middle mug inside the microwave and close the door.</em></strong>"
 	];
 	const Semanticood1TextList = [
-		"The training task instruction is to put both alphabet soup and the tomato sauce in the basket.\n The test instruction is rephrased to place the alphabet soup in the basket and the tomato sauce as well.",
-		"The training task instruction is to put both the cream cheese box and the butter in the basket.\nThe test instruction is rephrased to pick up both the cream cheese box and the butter and place them in the basket.",
-		"The training task instruction is to turn on the stove and put the moka pot on it.\nThe test instruction is rephrased to switch the stove on and set the moka pot on the stove.",
-    "The training task instruction is to put the black bowl in the bottom drawer of the cabinet and close it.\nThe test instruction is rephrased to move the black bowl to the bottom drawer and close the drawer of the cabinet.",
-    "The training task instruction is to put the white mug on the left plate and the yellow and white mug on the right plate.\nThe test instruction is rephrased to place two mugs on the plates, left one is the white mug and the right one is the yellow and white mug.",
-    "The training task instruction is to pick up the book and place it in the back compartment of the caddy.\nThe test instruction is rephrased to grab the standing book and transfer it to the back compartment of the caddy.",
-    "The training task instruction is to put the white mug on the plate and put the chocolate pudding to the right of the plate.\nThe test instruction is rephrased to set the white mug on the plate with chocolate pudding to be placed to the right.",
-    "The training task instruction is to put both alphabet soup and cream cheese box in the basket.\nThe test instruction is rephrased to move the two objects, alphabet soup and cream cheese box, to the basket.",
-    "The training task instruction is to put both moka pots on the stove.\nThe test instruction is rephrased to transfer both moka pots from the table to the stove.",
-    "The training task instruction is to put the yellow and white mug in the microwave and close it.\nThe test instruction is rephrased to place the yellow and white mug inside the microwave, then shut the door."
+		"The training task instruction is <strong><em>put both alphabet soup and the tomato sauce in the basket.</em></strong>\n The test instruction is rephrased to <strong><em>place the alphabet soup in the basket and the tomato sauce as well.</em></strong>",
+		"The training task instruction is <strong><em>put both the cream cheese box and the butter in the basket.</em></strong>\nThe test instruction is rephrased to <strong><em>pick up both the cream cheese box and the butter and place them in the basket.</em></strong>",
+		"The training task instruction is <strong><em>turn on the stove and put the moka pot on it.</em></strong>\nThe test instruction is rephrased to <strong><em>switch the stove on and set the moka pot on the stove.</em></strong>",
+    "The training task instruction is <strong><em>put the black bowl in the bottom drawer of the cabinet and close it.</em></strong>\nThe test instruction is rephrased to <strong><em>move the black bowl to the bottom drawer and close the drawer of the cabinet.</em></strong>",
+    "The training task instruction is <strong><em>put the white mug on the left plate and the yellow and white mug on the right plate.</em></strong>\nThe test instruction is rephrased to <strong><em>place two mugs on the plates, left one is the white mug and the right one is the yellow and white mug.</em></strong>",
+    "The training task instruction is <strong><em>pick up the book and place it in the back compartment of the caddy.</em></strong>\nThe test instruction is rephrased to <strong><em>grab the standing book and transfer it to the back compartment of the caddy.</em></strong>",
+    "The training task instruction is <strong><em>put the white mug on the plate and put the chocolate pudding to the right of the plate.</em></strong>\nThe test instruction is rephrased to <strong><em>set the white mug on the plate with chocolate pudding to be placed to the right.</em></strong>",
+    "The training task instruction is <strong><em>put both alphabet soup and cream cheese box in the basket.</em></strong>\nThe test instruction is rephrased to <strong><em>move the two objects, alphabet soup and cream cheese box, to the basket.</em></strong>",
+    "The training task instruction is <strong><em>put both moka pots on the stove.</em></strong>\nThe test instruction is rephrased to <strong><em>transfer both moka pots from the table to the stove.</em></strong>",
+    "The training task instruction is <strong><em>put the yellow and white mug in the microwave and close it.</em></strong>\nThe test instruction is rephrased to <strong><em>place the yellow and white mug inside the microwave, then shut the door.</em></strong>"
 	];
 	  
 
@@ -188,7 +188,7 @@ const Semanticood1ObjectList = [
 		
 		document.getElementById("semantic_ood1_cases").src = Semanticood1ObjectList[object] + ".mp4";
 //		document.getElementById("real_plot_failure").src = Semanticood1ObjectList[object] + ".html";
-		document.getElementById("semantic_ood1-text").textContent= Semanticood1TextList[object];
+		document.getElementById("semantic_ood1-text").innerHTML= Semanticood1TextList[object];
 	}
 
   function switchSemanticOOD2Video() {
@@ -197,7 +197,7 @@ const Semanticood1ObjectList = [
 
     document.getElementById("semantic_ood2_cases").src = Semanticood2ObjectList[object] + ".mp4";
 //		document.getElementById("real_plot_failure").src = Semanticood2ObjectList[object] + ".html";
-    document.getElementById("semantic_ood2-text").textContent= Semanticood2TextList[object];
+    document.getElementById("semantic_ood2-text").innerHTML= Semanticood2TextList[object];
   }
 
   function switchVisualOOD1Video() {
@@ -205,7 +205,7 @@ const Semanticood1ObjectList = [
     var videoList = Array();
 
     document.getElementById("visual_ood1_cases").src = Visualood1ObjectList[object] + ".mp4";
-    document.getElementById("visual_ood1-text").textContent= Visualood1TextList[object];
+    document.getElementById("visual_ood1-text").innerHTML= Visualood1TextList[object];
   }
 
   function switchVisualOOD2Video() {
@@ -213,21 +213,21 @@ const Semanticood1ObjectList = [
     var videoList = Array();
 
     document.getElementById("visual_ood2_cases").src = Visualood2ObjectList[object] + ".mp4";
-    document.getElementById("visual_ood2-text").textContent= Visualood2TextList[object];
+    document.getElementById("visual_ood2-text").innerHTML= Visualood2TextList[object];
   }
   function switchIDVideo() {
     var object = document.IDObjectForm.switch.options[document.IDObjectForm.switch.selectedIndex].value;
     var videoList = Array();
 
     document.getElementById("id_cases").src = IDObjectList[object] + ".mp4";
-    document.getElementById("id-text").textContent= IDTextList[object];
+    document.getElementById("id-text").innerHTML= IDTextList[object];
   }
   function switchComposeVideo() {
     var object = document.ComposeObjectForm.switch.options[document.ComposeObjectForm.switch.selectedIndex].value;
     var videoList = Array();
 
     document.getElementById("compose_cases").src = ComposeObjectList[object] + ".mp4";
-    document.getElementById("compose-text").textContent= ComposeTextList[object];
+    document.getElementById("compose-text").innerHTML= ComposeTextList[object];
   }
   </script>
 
@@ -343,6 +343,220 @@ const Semanticood1ObjectList = [
     </div>
   </div>
 </section>
+
+
+<section class="hero is-light is-small">
+	<div class="hero-body">
+	  <div class="container">
+		<div id="results-carousel" class="carousel results-carousel">
+		  
+				
+			
+		<div  class="slider" tabindex="0">
+<!-- <div class="slider-container" style="opacity: 1;  transition: 600ms; "> -->
+   <div class="slider-container" style="display:flex; justify-content:flex-start; align-items:flex-start; gap:24px; opacity:1; transition:600ms;">
+
+			</div></div>
+      <div class="slider-item is-current" data-slider-index="0" style="width: 320px;"><div class="item-0">
+				<video poster="" id="1" controls="" muted="" loop="" autoplay playsinline="" height="50%">
+					<source src="./static/videos/compose/rollout_put_the_red_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate_real_exec_43_success_length_359.mp4" type="video/mp4">
+				</video>
+				<div class="video-overlay">
+					<p>
+					  Task Description: <em>put the red mug on the plate and put the chocolate pudding to the right of the plate</em><br>
+          </p>
+            Method: <span style="color:#FA821C">SEAL (Ours)
+            </span><br>
+					<p style="color: green">Success</p>
+				</div>
+			<!-- </div></div><div class="slider-item is-slide-next" data-slider-index="1" style="width: 320px;margin:0;" ><div class="item-1"> -->
+		  </div></div><div class="slider-item is-slide-next" data-slider-index="1" data-cloned="true" style="width: 320px; margin: 0;" ><div class="item-3">
+			  <video poster="" id="2" controls="" muted="" loop="" autoplay playsinline="" height="50%" style="width:auto; display:block; margin:0 auto; max-width:160px;">
+
+				<!-- <video poster="" id="2" controls="" muted="" loop="" autoplay playsinline="" height="50%" style="width:auto; display:block; margin:0; max-width:160px;"> -->
+					<source src="./static/videos/baselines/vgps/rollout_put_the_red_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate_failure_ood.mp4" type="video/mp4">
+				</video>
+				<div class="video-overlay">
+					<p style="font-size: medium;">
+						Task Description: <em>put the red mug on the plate and put the chocolate pudding to the right of the plate</em><br>
+</p>
+            Method: <span style="color:#C979E6">&#960;<sub>0</sub>-V-GPS
+            </span><br>
+					<p style="color: red">Failure</p>
+              </div>
+			</div></div><div class="slider-item is-slide-previous" data-slider-index="2" style="width: 320px;" >
+				<div class="item-2">
+			<video poster="" id="3" controls="" muted="" loop=""  autoplay playsinline="" height="50%">
+				<source src="./static/videos/baselines/vla_reason/rollout_put_the_red_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate_real_exec_24_fail_length_520.mp4" type="video/mp4">
+			</video>
+			<div class="video-overlay">
+				<p>
+					Task Description: <em>put the red mug on the plate and put the chocolate pudding to the right of the plate</em><br>
+					Method: <span style="color:#646464">&#960;<sub>0</sub>-reason
+          </span><br>
+				  </p>
+				  <p style="color: red">Failure</p>
+			</div>
+		  </div></div><div class="slider-item" data-slider-index="3" data-cloned="true" style="width: 320px;"><div class="item-2">
+			  <video poster="" id="4" controls="" muted="" loop="" autoplay playsinline="" height="50%">
+				  <source src="./static/videos/semantic_1/rollout_set_the_white_mug_on_the_plate_with_chocolate_pudding_to_be_placed_to_the_right_real_exec_8_success_length_200.mp4" type="video/mp4">
+			  </video>
+			  <div class="video-overlay">
+				  <p>
+					Task Description: <em>set the white mug on the plate with chocolate pudding to be placed to the right</em><br>
+					Method: <span style="color:#FA821C">SEAL (Ours)
+            </span><br>
+				  </p>
+				  <p style="color: green">Success</p>
+			  </div>
+		  </div></div><div class="slider-item" data-slider-index="4" data-cloned="true" style="width: 320px; margin: 0;" ><div class="item-3">
+			  <video poster="" id="5" controls="" muted="" loop="" autoplay playsinline="" height="50%" style="width:auto; display:block; margin:0 auto; max-width:160px;">
+				  <source src="./static/videos/baselines/vgps/rollout_set_the_white_mug_on_the_plate_with_chocolate_pudding_to_be_placed_to_the_right_failure.mp4" type="video/mp4">
+			  </video>
+			  <div class="video-overlay">
+				  <p>
+					Task Description: <em>set the white mug on the plate with chocolate pudding to be placed to the right</em><br>
+					Method: <span style="color:#C979E6">&#960;<sub>0</sub>-V-GPS
+            </span><br>
+				  </p>
+				  <p style="color: red">Failure</p>
+			  </div>
+		  
+		  </div></div><div class="slider-item" data-slider-index="5" data-cloned="true" style="width: 320px;" ><div class="item-4">
+			  <video poster="" id="6" controls="" muted="" loop="" autoplay playsinline="" height="50%">
+				  <source src="./static/videos/baselines/vla_reason/rollout_set_the_white_mug_on_the_plate_with_chocolate_pudding_to_be_placed_to_the_right_real_exec_22_fail_length_520.mp4" type="video/mp4">
+			  </video>
+			  <div class="video-overlay">
+				  <p>
+					Task Description: <em>set the white mug on the plate with chocolate pudding to be placed to the right</em><br>
+					Method: <span style="color:#646464">&#960;<sub>0</sub>-reason
+            </span><br>
+				  </p>
+				  <p style="color: red">Failure</p>
+			  </div>
+		  
+		  </div></div><div class="slider-item" data-slider-index="5" data-cloned="true" style="width: 320px;" ><div class="item-4">
+			  <video poster="" id="6" controls="" muted="" loop="" autoplay playsinline="" height="50%">
+				  <source src="./static/videos/semantic_2/rollout_put_the_pure_white_cup_on_the_middle_plate_and_put_the_brown_chocolate_to_the_right_of_the_plate_real_exec_29_success_length_204.mp4" type="video/mp4">
+			  </video>
+			  <div class="video-overlay">
+				  <p>
+					Task Description: <em>put the pure white cup on the middle plate and put the brown chocolate to the right of the plate</em><br>
+					Method: <span style="color:#FA821C">SEAL (Ours)
+            </span><br>
+				  </p>
+				  <p style="color: green">Success</p>
+			  </div>
+		  </div></div><div class="slider-item" data-slider-index="6" data-cloned="true" style="width: 320px;"><div class="item-5">
+			  <video poster="" id="7" controls="" muted="" loop="" autoplay playsinline="" style="width:auto; display:block; margin:0 auto; max-width:160px;" height="50%">
+				  <source src="./static/videos/baselines/vgps/rollout_put_the_pure_white_cup_on_the_middle_plate_and_put_the_brown_chocolate_to_the_right_of_the_plate_failure.mp4" type="video/mp4">
+			  </video>
+			  <div class="video-overlay">
+				  <p>
+					Task Description: <em>put the pure white cup on the middle plate and put the brown chocolate to the right of the plate</em><br>
+					Method: <span style="color:#C979E6">&#960;<sub>0</sub>-V-GPS
+            </span><br>
+				  </p>
+				  <p style="color: red">Failure</p>
+			  </div>
+		  </div></div><div class="slider-item" data-slider-index="6" data-cloned="true" style="width: 320px;"><div class="item-5">
+			  <video poster="" id="7" controls="" muted="" loop="" autoplay playsinline="" height="50%">
+				  <source src="./static/videos/baselines/vla_reason/rollout_put_the_pure_white_cup_on_the_middle_plate_and_put_the_brown_chocolate_to_the_right_of_the_plate_real_exec_47_fail_length_520.mp4" type="video/mp4">
+			  </video>
+			  <div class="video-overlay">
+				  <p>
+					Task Description: <em>put the pure white cup on the middle plate and put the brown chocolate to the right of the plate</em><br>
+					Method: <span style="color:#646464">&#960;<sub>0</sub>-reason
+            </span><br>
+				  </p>
+				  <p style="color: red">Failure</p>
+				  
+			  </div>
+			</div></div><div class="slider-item" data-slider-index="6" data-cloned="true" style="width: 320px;"><div class="item-5">
+				<video poster="" id="7" controls="" muted="" loop="" autoplay playsinline="" height="50%">
+					<source src="./static/videos/visual_1/rollout__put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate_real_exec_8_success_length_206.mp4" type="video/mp4">
+				</video>
+				<div class="video-overlay">
+					<p>
+					  Task Description: <em>put the white mug on the plate and put the chocolate pudding to the right of the plate</em><br>
+					  Method: <span style="color:#FA821C">SEAL (Ours)
+            </span><br>
+					</p>
+					<p style="color: green">Success</p>
+					
+				</div>
+          </div></div><div class="slider-item" data-slider-index="6" data-cloned="true" style="width: 320px;"><div class="item-5">
+			  <video poster="" id="7" controls="" muted="" loop="" autoplay playsinline="" style="width:auto; display:block; margin:0 auto; max-width:160px;" height="50%">
+				  <source src="./static/videos/baselines/vgps/rollout__put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate_failure.mp4" type="video/mp4">
+			  </video>
+			  <div class="video-overlay">
+				  <p>
+					Task Description: <em>put the white mug on the plate and put the chocolate pudding to the right of the plate</em><br>
+					Method: <span style="color:#C979E6">&#960;<sub>0</sub>-V-GPS
+            </span><br>
+				  </p>
+				  <p style="color: red">Failure</p>
+				  
+			  </div>
+         </div></div><div class="slider-item" data-slider-index="6" data-cloned="true" style="width: 320px;"><div class="item-5">
+			  <video poster="" id="7" controls="" muted="" loop="" autoplay playsinline="" height="50%">
+				  <source src="./static/videos/baselines/vla_reason/rollout__put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate_real_exec_19_fail_length_520.mp4" type="video/mp4">
+			  </video>
+			  <div class="video-overlay">
+				  <p>
+					Task Description: <em>put the white mug on the plate and put the chocolate pudding to the right of the plate</em><br>
+					Method: <span style="color:#646464">&#960;<sub>0</sub>-reason
+            </span><br>
+				  </p>
+				  <p style="color: red">Failure</p>
+				  
+			  </div>
+         </div></div><div class="slider-item" data-slider-index="6" data-cloned="true" style="width: 320px;"><div class="item-5">
+			  <video poster="" id="7" controls="" muted="" loop="" autoplay playsinline="" height="50%">
+				  <source src="./static/videos/visual_2/rollout_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate_real_exec_8_success_length_233.mp4" type="video/mp4">
+			  </video>
+			  <div class="video-overlay">
+				  <p>
+					Task Description: <em>put the white mug on the plate and put the chocolate pudding to the right of the plate</em><br>
+					Method: <span style="color:#FA821C">SEAL (Ours)
+            </span><br>
+				  </p>
+				  <p style="color: green">Success</p>
+				  
+			  </div>
+
+         </div></div><div class="slider-item" data-slider-index="6" data-cloned="true" style="width: 320px;"><div class="item-5">
+			  <video poster="" id="7" controls="" muted="" loop="" autoplay playsinline="" style="width:auto; display:block; margin:0 auto; max-width:160px;" height="50%">
+				  <source src="./static/videos/baselines/vgps/rollout_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate_failure.mp4" type="video/mp4">
+			  </video>
+			  <div class="video-overlay">
+				  <p>
+					Task Description: <em>put the white mug on the plate and put the chocolate pudding to the right of the plate</em><br>
+					Method: <span style="color:#C979E6">&#960;<sub>0</sub>-V-GPS
+            </span><br>
+				  </p>
+				  <p style="color: red">Failure</p>
+				  
+			  </div>
+         </div></div><div class="slider-item" data-slider-index="6" data-cloned="true" style="width: 320px;"><div class="item-5">
+			  <video poster="" id="7" controls="" muted="" loop="" autoplay playsinline="" height="50%">
+				  <source src="./static/videos/baselines/vla_reason/rollout_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate_real_exec_42_fail_length_520.mp4" type="video/mp4">
+			  </video>
+			  <div class="video-overlay">
+				  <p>
+					Task Description: <em>put the white mug on the plate and put the chocolate pudding to the right of the plate</em><br>
+					Method: <span style="color:#646464">&#960;<sub>0</sub>-reason
+            </span><br>
+				  </p>
+				  <p style="color: red">Failure</p>
+				  
+			  </div>
+		  </div></div></div>
+      </div></div></div>
+     
+	  </div>
+	</div>
+  </section>
   
 <section class="section">
   <div class="container is-max-desktop">
@@ -377,6 +591,8 @@ const Semanticood1ObjectList = [
 	</div>
   </div>
 </section>
+
+
 <section class="section">
     <div class="container is-max-desktop">
 	  <div class ="columns ">
@@ -387,7 +603,7 @@ const Semanticood1ObjectList = [
 				<span id="text" style="font-weight: bold;font-size: 18px;color:#646464"> &#960;<sub>0</sub> - reason </span>:  the base reasoning VLA model from OneTwoVLA trained with our reasoning annotated data without runtime verification and steering. It is a direct ablation of our primary contribution<br>
 				<span id="text" style="font-weight: bold;font-size: 18px;color:#C979E6">&#960;<sub>0</sub>-V-GPS </span>: a state-of-the-art runtime steering method. It trains a critic Q-function using offline reinforcement learning and, at runtime, executes the action chunk with the highest Q-value from a set of policy samples <br>
 				<span id="text" style="font-weight: bold;font-size: 18px;color:#E2B6FF">&#960;<sub>0</sub> </span>: a vanilla VLA that directly maps visual-language inputs to actions without any intermediate textual reasoning..<br>		
-			</p>
+			<!-- </p> -->
 
 		 </div>
 		</div>
@@ -400,12 +616,16 @@ const Semanticood1ObjectList = [
 		<h3 class="title is-4"> In-Distribution Scenarios </h3>
 	</div>
 	<br>
-  <p>With reasoning-action alignment, <b>SEAL (our method)</b> improves performance of reasoning VLAs on in-distribution tasks.</p>
+  <p>With reasoning-action alignment, <span id="text" style="font-weight: bold;font-size: 18px;color:#FA821C"> SEAL (ours) </span> improves performance of reasoning VLAs for in-distribution tasks.</p>
 	<img src="static/figures/libero_compose.png" alt="ID Tasks Figure">
+  <br>
+  <br>
 	<div class="columns is-centered is-two-fifths">
-		<span>
-			<b> Interactive Visuliazation: </b>&nbsp; Drag the slider to visualize in-distribution scenarios for each task in LIBERO-10.
-		</span>
+		<!-- <span> -->
+      <p>
+			<b> Interactive Visuliazation: </b>&nbsp; Drag the slider to visualize<span id="text" style="font-weight: bold;font-size: 18px;color:#FA821C"> SEAL</span>'s performance for in-distribution scenarios of each task in LIBERO-10.
+		</p>
+    <!-- </span> -->
 	</div>
 	<br>
 	</div>
@@ -413,7 +633,7 @@ const Semanticood1ObjectList = [
 <div class="columns is-centered  is-four-fifths"> 
     <!-- <div class="columns is-centered is-full-width"> -->
 	<p>
-	 <b>In-Distribution</b> : </p>
+	 <b>In-Distribution</b> : &nbsp;</p>
 	<form method="" action="" name="IDObjectForm">
 	<select size="1" name="switch" onchange="switchIDVideo();">
 		<option value="0">Task 1</option>
@@ -432,7 +652,7 @@ const Semanticood1ObjectList = [
 	</div> 
 	<!-- <div class="container is-max-desktop"> -->
     <div class="column is-one-fourth has-text-centered">
-		<span id="id-text" style="color:#5E5E5E"> Both the training and test instruction is put both the alphabet soup and the tomato sauce in the basket.</span>
+		<span id="id-text" style="color:#5E5E5E"> Both the training and test instruction is <i><b>put both the alphabet soup and the tomato sauce in the basket</b></i>.</span>
   <!-- </div> -->
   </div>
 
@@ -445,7 +665,7 @@ const Semanticood1ObjectList = [
 		 playsinline
 
      autoplay
-		 width="60%">
+		 width="80%">
 		<source src="./static/videos/id/rollout_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket_success_1.mp4"
 				type="video/mp4">
 	</video> 
@@ -458,12 +678,14 @@ const Semanticood1ObjectList = [
 		<h3 class="title is-4"> Novel Behavior Composition Tasks </h3>
 	</div>
 	<br>
-  <p>As shown in the figure above, with reasoning-action alignment, <b>SEAL (our method)</b> obtains even larger performance gains over reasoning VLAs on novel behavior composition tasks compared to ID tasks.</p>
+  <p>As shown in the figure above, with reasoning-action alignment, <span id="text" style="font-weight: bold;font-size: 18px;color:#FA821C"> SEAL (ours) </span>obtains even larger performance gains over reasoning VLAs on novel behavior composition tasks compared to ID tasks.</p>
 	<br>
 	<div class="columns is-centered is-two-fifths">
-		<span>
-			<b> Interactive Visuliazation: </b>&nbsp; Drag the slider to visualize novel behavior composition tasks for each task in LIBERO-10.
-		</span>
+		<!-- <span> -->
+      <p>
+			<b> Interactive Visuliazation: </b>&nbsp; Drag the slider to visualize <span id="text" style="font-weight: bold;font-size: 18px;color:#FA821C"> SEAL </span>'s policy for novel behavior composition tasks derived from LIBERO-10.
+		</p>
+    <!-- </span> -->
 	</div>
 	<br>
 	</div>
@@ -471,7 +693,7 @@ const Semanticood1ObjectList = [
 <div class="columns is-centered  is-four-fifths"> 
     <!-- <div class="columns is-centered is-full-width"> -->
 	<p>
-	 <b>Behavior Composition</b> : </p>
+	 <span id="text" style="font-weight: bold;font-size: 18px;color:#FFC000">Behavior Composition</span> : combine learned skills for novel tasks &nbsp;</p>
 	<form method="" action="" name="ComposeObjectForm">
 	<select size="1" name="switch" onchange="switchComposeVideo();">
 		<option value="0">Task 1</option>
@@ -493,7 +715,7 @@ const Semanticood1ObjectList = [
 	</div> 
 	<!-- <div class="container is-max-desktop"> -->
     <div class="column is-one-fourth has-text-centered">
-		<span id="compose-text" style="color:#5E5E5E"> The training instruction is 1. put both the cream cheese box and the butter in the basket. 2. put the alphabet soup in the basket. <br>The test instruction is put both the alphabet soup and the butter in the basket.</span>
+		<span id="compose-text" style="color:#5E5E5E"> The training instruction is <strong><em>1. put both the cream cheese box and the butter in the basket. 2. put the alphabet soup in the basket.</em></strong> <br>The test instruction is <strong><em>put both the alphabet soup and the butter in the basket.</em></strong></span>
   <!-- </div> -->
   </div>
 
@@ -506,7 +728,7 @@ const Semanticood1ObjectList = [
 		 playsinline
 
      autoplay
-		 width="60%">
+		 width="80%">
 		<source src="./static/videos/compose/rollout_put_both_the_alphabet_soup_and_the_butter_in_the_basket_real_exec_5_success_length_234.mp4"
 				type="video/mp4">
 	</video> 
@@ -519,14 +741,15 @@ const Semanticood1ObjectList = [
 		<h3 class="title is-4"> Out-of-Distribution Scenarios </h3>
 	</div>
 	<br>
-  <p><b>SEAL (our method)</b> is more robust to various OOD shifts (including semantic and visual changes) than other baselines</p>
+  <p> <span id="text" style="font-weight: bold;font-size: 18px;color:#FA821C"> SEAL </span>is more robust to various OOD shifts (including semantic and visual changes) than other baselines</p>
   <img src="static/figures/libero_ood.png" alt="OOD Types Figure">
   <br><br>
 	
 	<div class="columns is-centered is-two-fifths">
-		<span>
-			<b> Interactive Visuliazation: </b>&nbsp; Drag the slider to visualize out-of-distribution scenarios for each task in LIBERO-10.
-		</span>
+		<!-- <span>  -->
+      <p>
+			<b> Interactive Visuliazation: </b>&nbsp; Drag the slider to visualize how <span id="text" style="font-weight: bold;font-size: 18px;color:#FA821C"> SEAL</span> performs under various OOD shifts for each task in LIBERO-10.
+		</p>
 	</div>
 	<br>
 	</div>
@@ -534,7 +757,7 @@ const Semanticood1ObjectList = [
 <div class="columns is-centered  is-four-fifths"> 
     <!-- <div class="columns is-centered is-full-width"> -->
 	<p>
-	 <b>Semantic OOD (Lang-Rephrase)</b> : rephrase the task instruction but keep the object description the same.&nbsp; </p>
+	 <span id="text" style="font-weight: bold;font-size: 18px;color:#0F9ED5"> Semantic OOD (Lang-Rephrase)</span> : rephrase the task instruction but keep the object description the same. &nbsp; </p>
 	<form method="" action="" name="semanticood1ObjectForm">
 	<select size="1" name="switch" onchange="switchSemanticOOD1Video();">
 		<option value="0">Task 1</option>
@@ -553,7 +776,7 @@ const Semanticood1ObjectList = [
 	</div> 
 	<!-- <div class="container is-max-desktop"> -->
     <div class="column is-one-fourth has-text-centered">
-		<span id="semantic_ood1-text" style="color:#5E5E5E"> The training instruction is put both the alphabet soup and the tomato sauce in the basket.<br> The test instruction is place the alphabet soup in the basket and the tomato sauce as well</span>
+		<span id="semantic_ood1-text" style="color:#5E5E5E"> The training instruction is <strong><em>put both the alphabet soup and the tomato sauce in the basket.</em></strong><br> The test instruction is <strong><em>place the alphabet soup in the basket and the tomato sauce as well</em></strong></span>
   <!-- </div> -->
   </div>
 
@@ -566,7 +789,7 @@ const Semanticood1ObjectList = [
 		 playsinline
 
      autoplay
-		 width="60%">
+		 width="80%">
 		<source src="./static/videos/semantic_1/rollout_place_the_alphabet_soup_in_the_basket_and_the_tomato_sauce_as_well_real_exec_1_success_length_214.mp4"
 				type="video/mp4">
 	</video> 
@@ -575,7 +798,7 @@ const Semanticood1ObjectList = [
 <div class="columns is-centered  is-four-fifths"> 
     <!-- <div class="columns is-centered is-full-width"> -->
 	<p>
-	 <b>Semantic OOD (Lang-Object-Property)</b> : only change the object description.&nbsp; </p>
+	  <span id="text" style="font-weight: bold;font-size: 18px;color:#0F9ED5"> Semantic OOD (Lang-Object-Property)</span> : only change the object description.&nbsp; </p>
 	<form method="" action="" name="semanticood2ObjectForm">
 	<select size="1" name="switch" onchange="switchSemanticOOD2Video();">
 		<option value="0">Task 1</option>
@@ -594,7 +817,7 @@ const Semanticood1ObjectList = [
 	</div> 
 	<!-- <div class="container is-max-desktop"> -->
     <div class="column is-one-fourth has-text-centered">
-		<span id="semantic_ood2-text" style="color:#5E5E5E"> The training instruction is put both the alphabet soup and the tomato sauce in the basket. <br> The test instruction is put both the can of soup and the can of sauce in the basket.</span>
+		<span id="semantic_ood2-text" style="color:#5E5E5E"> The training instruction is <strong><em>put both the alphabet soup and the tomato sauce in the basket.</em></strong> <br> The test instruction is <strong><em>put both the can of soup and the can of sauce in the basket.</em></strong></span>
   <!-- </div> -->
   </div>
 
@@ -607,7 +830,7 @@ const Semanticood1ObjectList = [
 		 playsinline
 
      autoplay
-		 width="60%">
+		 width="80%">
 		<source src="./static/videos/semantic_2/rollout_put_both_the_can_of_soup_and_can_of_sauce_in_the_basket_real_exec_30_success_length_233.mp4"
 				type="video/mp4">
 	</video> 
@@ -616,7 +839,7 @@ const Semanticood1ObjectList = [
 <div class="columns is-centered  is-four-fifths"> 
     <!-- <div class="columns is-centered is-full-width"> -->
 	<p>
-	 <b>Visual OOD (Visual-Scene)</b> : only replace or add the distractor object.&nbsp; </p>
+	  <span id="text" style="font-weight: bold;font-size: 18px;color:#4EA72E"> Visual OOD (Visual-Scene)</span> : only replace or add the distractor object.&nbsp; </p>
 	<form method="" action="" name="visualood1ObjectForm">
 	<select size="1" name="switch" onchange="switchVisualOOD1Video();">
 		<option value="0">Task 1</option>
@@ -635,7 +858,7 @@ const Semanticood1ObjectList = [
 	</div> 
 	<!-- <div class="container is-max-desktop"> -->
     <div class="column is-one-fourth has-text-centered">
-		<span id="visual_ood1-text" style="color:#5E5E5E"> Both training and test instruction is put both the alphabet soup and the tomato sauce in the basket.</span>
+		<span id="visual_ood1-text" style="color:#5E5E5E"> Both training and test instruction is <strong><em>put both the alphabet soup and the tomato sauce in the basket.</em></strong></span>
   <!-- </div> -->
   </div>
 
@@ -648,7 +871,7 @@ const Semanticood1ObjectList = [
 		 playsinline
 
      autoplay
-		 width="60%">
+		 width="80%">
 		<source src="./static/videos/visual_1/rollout__put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket_real_exec_20_success_length_246.mp4"
 				type="video/mp4">
 	</video> 
@@ -657,7 +880,7 @@ const Semanticood1ObjectList = [
 <div class="columns is-centered  is-four-fifths"> 
     <!-- <div class="columns is-centered is-full-width"> -->
 	<p>
-	 <b>Visual OOD (Visual-Viewpoint)</b> : change the background and the camera pose.&nbsp; </p>
+	 <span id="text" style="font-weight: bold;font-size: 18px;color:#4EA72E">Visual OOD (Visual-Viewpoint)</span> : change the background and the camera pose.&nbsp; </p>
 	<form method="" action="" name="visualood2ObjectForm">
 	<select size="1" name="switch" onchange="switchVisualOOD2Video();">
 		<option value="0">Task 1</option>
@@ -676,7 +899,7 @@ const Semanticood1ObjectList = [
 	</div> 
 	<!-- <div class="container is-max-desktop"> -->
     <div class="column is-one-fourth has-text-centered">
-		<span id="visual_ood2-text" style="color:#5E5E5E"> Both training and test instruction is put both the alphabet soup and the tomato sauce in the basket.</span>
+		<span id="visual_ood2-text" style="color:#5E5E5E"> Both training and test instruction is <strong><em>put both the alphabet soup and the tomato sauce in the basket.</em></strong></span>
   <!-- </div> -->
   </div>
 
@@ -689,7 +912,7 @@ const Semanticood1ObjectList = [
 		 playsinline
 
      autoplay
-		 width="60%">
+		 width="80%">
 		<source src="./static/videos/visual_2/rollout_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket_real_exec_20_success_length_486.mp4"
 				type="video/mp4">
   </video> 

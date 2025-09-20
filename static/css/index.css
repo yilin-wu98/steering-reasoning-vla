@@ -160,10 +160,13 @@ body {
 	width: 50%;
 	display: block;
 	margin-left: auto;
-	margin-right: 0;
+	margin-right: auto;
 	margin-top: 5px;
 	color: #2B2B2B;
 }
+/* shrink ONLY the second column (0-based index = 1) */
+/* uniform spacing */
+
 
 .plotly-notations {
 	width: 35%;
@@ -173,4 +176,7 @@ body {
 
 #semantic_ood1-text { white-space: pre-line; }
 #semantic_ood2-text { white-space: pre-line; }
+#visual_ood1-text { white-space: pre-line; }
+#visual_ood2-text { white-space: pre-line; }
+#id-text { white-space: pre-line; }
 #compose-text { white-space: pre-line; }
