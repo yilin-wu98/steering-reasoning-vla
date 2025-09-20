@@ -20,70 +20,215 @@ via Runtime Steering for Vision-Language-Action Models">
 
 	gtag('config', 'G-PYVRSFMDRL');
 	
-	// Change Video
-	const successObjectList = [
-		"./static/demos/success/black-mug",
-		"./static/demos/success/blue-cup",
-		"./static/demos/success/box",
-		"./static/demos/success/hook",
-		"./static/demos/success/milk-carton",
-		"./static/demos/success/red-bottle",
-		"./static/demos/success/red-mug",
-		"./static/demos/success/toy-block",
-		"./static/demos/success/toy-bridge",
-		"./static/demos/success/wood-block",
+const Semanticood1ObjectList = [
+		"./static/videos/semantic_1/rollout_place_the_alphabet_soup_in_the_basket_and_the_tomato_sauce_as_well_real_exec_1_success_length_214",
+		"./static/videos/semantic_1/rollout_pick_up_both_the_cream_cheese_box_and_the_butter_and_place_them_in_the_basket_real_exec_18_success_length_231",
+		"./static/videos/semantic_1/rollout_switch_the_stove_on_and_set_the_moka_pot_on_the_stove_real_exec_7_success_length_256",
+    "./static/videos/semantic_1/rollout_move_the_black_bowl_to_the_bottom_drawer_and_close_the_drawer_of_the_cabinet_real_exec_26_success_length_209",
+    "./static/videos/semantic_1/rollout_place_two_mugs_on_the_plates,_left_one_is_the_white_mug_and_the_right_one_is_the_yellow_and_white_mug_real_exec_7_success_length_219",
+    "./static/videos/semantic_1/rollout_grab_the_standing_book_and_transfer_it_to_the_back_compartment_of_the_caddy_real_exec_8_success_length_147",
+    "./static/videos/semantic_1/rollout_set_the_white_mug_on_the_plate_with_chocolate_pudding_to_be_placed_to_the_right_real_exec_8_success_length_200",
+    "./static/videos/semantic_1/rollout_move_the_two_objects,_alphabet_soup_and_cream_cheese_box,_to_the_basket_real_exec_7_success_length_254",
+    "./static/videos/semantic_1/rollout_transfer_both_moka_pots_from_the_table_to_the_stove_real_exec_49_success_length_362",
+    "./static/videos/semantic_1/rollout_place_the_yellow_and_white_mug_inside_the_microwave,_then_shut_the_door_real_exec_40_success_length_218"
+	];
+
+  const Semanticood2ObjectList = [
+    "./static/videos/semantic_2/rollout_put_both_the_can_of_soup_and_can_of_sauce_in_the_basket_real_exec_30_success_length_233",
+    "./static/videos/semantic_2/rollout_put_both_the_box_of_cheese_and_the_box_of_butter_in_the_basket_real_exec_1_success_length_222",
+    "./static/videos/semantic_2/rollout_turn_on_the_cooktop_and_place_the_moka_machine_on_it_real_exec_6_success_length_240",
+    "./static/videos/semantic_2/rollout_put_the_middle_bowl_to_the_lowest_drawer_and_close_it_real_exec_31_success_length_209",
+    "./static/videos/semantic_2/rollout_put_the_pure_white_cup_on_the_left_plate_and_put_the_other_one_with_the_yellow_handle_on_the_right_plate_real_exec_8_success_length_216",
+    "./static/videos/semantic_2/rollout_pick_up_the_right_book_and_put_it_in_the_rear_part_of_the_caddy_real_exec_6_success_length_140",
+    "./static/videos/semantic_2/rollout_put_the_pure_white_cup_on_the_middle_plate_and_put_the_brown_chocolate_to_the_right_of_the_plate_real_exec_29_success_length_204",
+    "./static/videos/semantic_2/rollout_put_both_the_can_of_soup_and_the_box_of_cheese_in_the_basket_real_exec_30_success_length_249",
+    "./static/videos/semantic_2/rollout_put_both_the_moka_coffee_makers_on_the_cooktop_real_exec_1_success_length_347",
+    "./static/videos/semantic_2/rollout_put_the_middle_mug_inside_the_microwave_and_close_the_door_real_exec_5_success_length_223"
+  ];	 
+  
+  const Visualood1ObjectList = [
+    "./static/videos/visual_1/rollout__put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket_real_exec_20_success_length_246",
+    "./static/videos/visual_1/rollout__put_both_the_cream_cheese_box_and_the_butter_in_the_basket_real_exec_18_success_length_239",
+    "./static/videos/visual_1/rollout__turn_on_the_stove_and_put_the_moka_pot_on_it_real_exec_7_success_length_233",
+    "./static/videos/visual_1/rollout__put_the_black_bowl_in_the_bottom_drawer_of_the_cabinet_and_close_it_real_exec_8_success_length_205",
+    "./static/videos/visual_1/rollout__put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate_real_exec_8_success_length_225",
+    "./static/videos/visual_1/rollout__pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy_real_exec_8_success_length_175",
+    "./static/videos/visual_1/rollout__put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate_real_exec_8_success_length_206",
+    "./static/videos/visual_1/rollout__put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket_real_exec_8_success_length_227",
+    "./static/videos/visual_1/rollout__put_both_moka_pots_on_the_stove_real_exec_0_success_length_358",
+    "./static/videos/visual_1/rollout__put_the_yellow_and_white_mug_in_the_microwave_and_close_it_real_exec_8_success_length_248"
+  ];
+    const Visualood2ObjectList = [
+    "./static/videos/visual_1/rollout_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket_real_exec_20_success_length_486",
+    "./static/videos/visual_1/rollout_put_both_the_cream_cheese_box_and_the_butter_in_the_basket_real_exec_18_success_length_271",
+    "./static/videos/visual_1/rollout_turn_on_the_stove_and_put_the_moka_pot_on_it_real_exec_7_success_length_311",
+    "./static/videos/visual_1/rollout_put_the_black_bowl_in_the_bottom_drawer_of_the_cabinet_and_close_it_real_exec_8_success_length_233",
+    "./static/videos/visual_1/rollout_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate_real_exec_8_success_length_264",
+    "./static/videos/visual_1/rollout_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy_real_exec_8_success_length_274",
+    "./static/videos/visual_1/rollout_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate_real_exec_8_success_length_233",
+    "./static/videos/visual_1/rollout_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket_real_exec_8_success_length_300",
+    "./static/videos/visual_1/rollout_put_both_moka_pots_on_the_stove_real_exec_8_success_length_468",
+    "./static/videos/visual_1/rollout_put_the_yellow_and_white_mug_in_the_microwave_and_close_it_real_exec_39_success_length_316"
+  ];
+
+  const IDObjectList = [
+    "./static/videos/id/rollout_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket_success_1",
+    "./static/videos/id/rollout_put_both_the_cream_cheese_box_and_the_butter_in_the_basket_success_1",
+    "./static/videos/id/rollout_turn_on_the_stove_and_put_the_moka_pot_on_it_success_1",
+    "./static/videos/id/rollout_put_the_black_bowl_in_the_bottom_drawer_of_the_cabinet_and_close_it_success_1",
+    "./static/videos/id/rollout_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate_success_1",
+    "./static/videos/id/rollout_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy_success_1",
+    "./static/videos/id/rollout_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate_success_1",
+    "./static/videos/id/rollout_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket_success_1",
+    "./static/videos/id/rollout_put_both_moka_pots_on_the_stove_success_1",
+    "./static/videos/id/rollout_put_the_yellow_and_white_mug_in_the_microwave_and_close_it_success_1"
+  ];
+
+  const IDTextList = [
+    "Both the training and test instruction is put both the alphabet soup and the tomato sauce in the basket.",
+    "Both the training and test instruction is put both the cream cheese box and the butter in the basket.",
+    "Both the training and test instruction is turn on the stove and put the moka pot on it.",
+    "Both the training and test instruction is put the black bowl in the bottom drawer of the cabinet and close it.",
+    "Both the training and test instruction is put the white mug on the left plate and the yellow and white mug on the right plate.",
+    "Both the training and test instruction is pick up the book and place it in the back compartment of the caddy.",
+    "Both the training and test instruction is put the white mug on the plate and put the chocolate pudding to the right of the plate.",
+    "Both the training and test instruction is put both alphabet soup and cream cheese box in the basket.",
+    "Both the training and test instruction is put both moka pots on the stove.",    
+    "Both the training and test instruction is put the yellow and white mug in the microwave and close it."
+  ];
+
+  const ComposeObjectList = [
+    "./static/videos/compose/rollout_put_both_the_alphabet_soup_and_the_butter_in_the_basket_real_exec_5_success_length_234",
+    "./static/videos/compose/rollout_put_both_the_cream_cheese_box_and_the_tomato_sauce_in_the_basket_real_exec_9_success_length_263",
+    "./static/videos/compose/rollout_put_both_the_orange_juice_and_the_butter_in_the_basket_real_exec_5_success_length_251",
+    "./static/videos/compose/rollout_put_both_the_orange_juice_and_the_tomato_sauce_in_the_basket_real_exec_0_success_length_276",
+    "./static/videos/compose/rollout_put_both_the_milk_and_the_butter_in_the_basket_real_exec_11_success_length_231",
+    "./static/videos/compose/rollout_put_both_the_milk_and_the_tomato_sauce_in_the_basket_real_exec_4_success_length_261",
+    "./static/videos/compose/rollout_put_both_the_tomato_sauce_and_the_butter_in_the_basket_real_exec_6_success_length_214",
+    "./static/videos/compose/rollout_put_both_the_ketchup_and_the_cream_cheese_box_in_the_basket_real_exec_3_success_length_238",
+    "./static/videos/compose/rollout_put_both_the_tomato_sauce_and_the_cream_cheese_box_in_the_basket_real_exec_38_success_length_245",
+    "./static/videos/compose/rollout_put_the_wine_bottle_in_the_bottom_drawer_of_the_cabinet_and_close_it_real_exec_6_success_length_236",
+    "./static/videos/compose/rollout_put_the_red_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate_real_exec_43_success_length_359",
+    "./static/videos/compose/rollout_put_the_red_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_left_of_the_plate_real_exec_15_success_length_330",
+    "./static/videos/compose/rollout_put_the_red_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate_real_exec_4_success_length_259"
+
+  ]
+  const ComposeTextList = [
+    "The training instruction is 1) put both the cream cheese box and the butter in the basket. 2) put the alphabet soup in the basket.\n The test instruction is put both the alphabet soup and the butter in the basket.",
+    "The training instruction is 1) put both the cream cheese box and the butter in the basket. 2) put the tomato sauce in the basket.\n The test instruction is put both the cream cheese box and the tomato sauce in the basket.",
+    "The training instruction is 1) put both the cream cheese box and the butter in the basket. 2) put the orange juice in the basket. \nThe test instruction is put both the orange juice and the butter in the basket.",
+    "The training instruction is 1) put both the alphabet soup and the tomato sauce in the basket. 2) put the orange juice in the basket.\n The test instruction is put both the orange juice and the tomato sauce in the basket.",
+    "The training instruction is 1) put both the cream cheese box and the butter in the basket. 2) put the milk in the basket. \nThe test instruction is put both the milk and the butter in the basket.",
+    "The training instruction is 1) put both the alphabet soup and the tomato sauce in the basket. 2) put the milk in the basket. \nThe test instruction is put both the milk and the tomato sauce in the basket.",
+    "The training instruction is 1) put both the cream cheese box and the butter in the basket. 2) put the tomato sauce in the basket. \nThe test instruction is put both the tomato sauce and the butter in the basket.",
+    "The training instruction is 1) put both the alphabet soup and the cream cheese box in the basket. 2) put the ketchup in the basket. \nThe test instruction is put both the ketchup and the cream cheese box in the basket.",
+    "The training instruction is 1) put both the alphabet soup and the cream cheese box in the basket. 2) put the tomato sauce in the basket.\n The test instruction is put both the tomato sauce and the cream cheese box in the basket.",
+    "The training instruction is 1) put the black bowl in the bottom drawer of the cabinet and close it. 2) put the wine bottle in the bottom drawer of the cabinet.\n The test instruction is put the wine bottle in the bottom drawer of the cabinet and close it.",
+    "The training instruction is 1) put the white mug on the plate and put the chocolate pudding to the right of the plate. 2) put the red mug on the plate. 3) put the chocolate pudding to the right of the plate.\n The test instruction is put the red mug on the plate and put the chocolate pudding to the right of the plate.",
+    "The training instruction is 1) put the white mug on the plate and put the chocolate pudding to the right of the plate. 2) put the red mug on the plate. 3) put the chocolate pudding to the left of the plate.\n The test instruction is put the red mug on the plate and put the chocolate pudding to the left of the plate.",
+    "The training instruction is 1) put the white mug on the left plate and the yellow and white mug on the right plate. 2) put the red mug on the left plate.\n The test instruction is put the red mug on the left plate and put the yellow and white mug on the right plate."
+
+  ]
+
+  const Visualood1TextList = [
+    "Both training and test instructions are to put both the alphabet soup and the tomato sauce in the basket.",
+    "Both training and test instructions are to put both the cream cheese box and the butter in the basket.",
+    "Both training and test instructions are to turn on the stove and put the moka pot on it.",
+    "Both training and test instructions are to put the black bowl in the bottom drawer of the cabinet and close it.",
+    "Both training and test instructions are to put the white mug on the left plate and the yellow and white mug on the right plate.",
+    "Both training and test instructions are to pick up the book and place it in the back compartment of the caddy.",
+    "Both training and test instructions are to put the white mug on the plate and put the chocolate pudding to the right of the plate.",
+    "Both training and test instructions are to put both alphabet soup and cream cheese box in the basket.",
+    "Both training and test instructions are to put both moka pots on the stove.",    
+    "Both training and test instructions are to put the yellow and white mug in the microwave and close it."
+  ];
+
+  constVisualood2TextList = [
+    "Both training and test instructions are to put both the alphabet soup and the tomato sauce in the basket.",
+    "Both training and test instructions are to put both the cream cheese box and the butter in the basket.",
+    "Both training and test instructions are to turn on the stove and put the moka pot on it.",
+    "Both training and test instructions are to put the black bowl in the bottom drawer of the cabinet and close it.",
+    "Both training and test instructions are to put the white mug on the left plate and the yellow and white mug on the right plate.",
+    "Both training and test instructions are to pick up the book and place it in the back compartment of the caddy.",
+    "Both training and test instructions are to put the white mug on the plate and put the chocolate pudding to the right of the plate.",
+    "Both training and test instructions are to put both alphabet soup and cream cheese box in the basket.",
+    "Both training and test instructions are to put both moka pots on the stove.",    
+    "Both training and test instructions are to put the yellow and white mug in the microwave and close it."
+  ];
+	const Semanticood2TextList = [
+		"The training task instruction is to put both the alphabet soup and the tomato sauce in the basket.\nThe test instruction is rephrased to put both the alphabet soup and the tomato sauce in the basket.",
+		"The training task instruction is to put both the cream cheese box and the butter in the basket.\nThe test instruction is rephrased to put both the box of cheese and the box of butter in the basket.",
+		"The training task instruction is to turn on the stove and put the moka pot on it.\nThe test instruction is rephrased to turn on the cooktop and place the moka machine on it.",
+    "The training task instruction is to put the black bowl in the bottom drawer of the cabinet and close it.\nThe test instruction is rephrased to put the middle bowl to the lowest drawer and close it.",
+    "The training task instruction is to put the white mug on the left plate and the yellow and white mug on the right plate.\nThe test instruction is rephrased to put the pure white cup on the left plate and put the other one with the yellow handle on the right plate.",
+    "The training task instruction is to pick up the book and place it in the back compartment of the caddy.\nThe test instruction is rephrased to pick up the right book and put it in the rear part of the caddy.",
+    "The training task instruction is to put the white mug on the plate and put the chocolate pudding to the right of the plate.\nThe test instruction is rephrased to put the pure white cup on the middle plate and put the brown chocolate to the right of the plate.",
+    "The training task instruction is to put both alphabet soup and cream cheese box in the basket.\nThe test instruction is rephrased to put both the can of soup and box of cheese in the basket.",
+    "The training task instruction is to put both moka pots on the stove.\nThe test instruction is rephrased to put both moka coffee makers on the cooktop.",
+    "The training task instruction is to put the yellow and white mug in the microwave and close it.\nThe test instruction is rephrased to put the middle mug inside the microwave and close the door."
+	];
+	const Semanticood1TextList = [
+		"The training task instruction is to put both alphabet soup and the tomato sauce in the basket.\n The test instruction is rephrased to place the alphabet soup in the basket and the tomato sauce as well.",
+		"The training task instruction is to put both the cream cheese box and the butter in the basket.\nThe test instruction is rephrased to pick up both the cream cheese box and the butter and place them in the basket.",
+		"The training task instruction is to turn on the stove and put the moka pot on it.\nThe test instruction is rephrased to switch the stove on and set the moka pot on the stove.",
+    "The training task instruction is to put the black bowl in the bottom drawer of the cabinet and close it.\nThe test instruction is rephrased to move the black bowl to the bottom drawer and close the drawer of the cabinet.",
+    "The training task instruction is to put the white mug on the left plate and the yellow and white mug on the right plate.\nThe test instruction is rephrased to place two mugs on the plates, left one is the white mug and the right one is the yellow and white mug.",
+    "The training task instruction is to pick up the book and place it in the back compartment of the caddy.\nThe test instruction is rephrased to grab the standing book and transfer it to the back compartment of the caddy.",
+    "The training task instruction is to put the white mug on the plate and put the chocolate pudding to the right of the plate.\nThe test instruction is rephrased to set the white mug on the plate with chocolate pudding to be placed to the right.",
+    "The training task instruction is to put both alphabet soup and cream cheese box in the basket.\nThe test instruction is rephrased to move the two objects, alphabet soup and cream cheese box, to the basket.",
+    "The training task instruction is to put both moka pots on the stove.\nThe test instruction is rephrased to transfer both moka pots from the table to the stove.",
+    "The training task instruction is to put the yellow and white mug in the microwave and close it.\nThe test instruction is rephrased to place the yellow and white mug inside the microwave, then shut the door."
 	];
 	  
-	const failureObjectList = [
-		"./static/videos/failure_world_model",
-		"./static/videos/narration_failure",
-		"./static/videos/behavior_wrong"
-	];
-	
-	const simObjectList = [
-		"./static/demos/sim/tape",
-		"./static/demos/sim/cup",
-		"./static/demos/sim/cube",
-		"./static/demos/sim/pillbottle",
-		"./static/demos/sim/teapot",
-	]
+
 	  
-	const failureTextList = [
-		"In this example, the actual execution of the action plan knocks the cup down on the table while the world model mistakenly imagines the robot successfully picks up the cup from the table via the handle.",
-		"In this example, the actual execution matches the world model's imagination as the robot picks up the chip bag via the edge but the VLM generates a wrong behavior narration, saying that the robot fails to pick up the bag.",
-		"In this example, the behavior narrations generated by the VLM are accurate, but the VLM selects the wrong action plan with the wrong reasoning given the task description."
-	];
-	  
-	function switchSuccessVideo() {
-		var object = document.successObjectForm.switch.options[document.successObjectForm.switch.selectedIndex].value;
+	function switchSemanticOOD1Video() {
+		var object = document.semanticood1ObjectForm.switch.options[document.semanticood1ObjectForm.switch.selectedIndex].value;
 		var videoList = Array();
 		
-//		document.getElementById("test_text").textContent= "abc";
-		document.getElementById("real_video_success").src = successObjectList[object] + ".mp4";
-//		document.getElementById("real_plot_success").src = successObjectList[object] + ".html";
-//		document.getElementById("test_text").textContent= successObjectList[object];
+		document.getElementById("semantic_ood1_cases").src = Semanticood1ObjectList[object] + ".mp4";
+//		document.getElementById("real_plot_failure").src = Semanticood1ObjectList[object] + ".html";
+		document.getElementById("semantic_ood1-text").textContent= Semanticood1TextList[object];
 	}
-	  
-	function switchFailureVideo() {
-		var object = document.failureObjectForm.switch.options[document.failureObjectForm.switch.selectedIndex].value;
-		var videoList = Array();
-		
-		document.getElementById("real_video_failure").src = failureObjectList[object] + ".mp4";
-//		document.getElementById("real_plot_failure").src = failureObjectList[object] + ".html";
-		document.getElementById("failure-text").textContent= failureTextList[object];
-	}
-	
-	function switchSimVideo() {
-		var object = document.simObjectForm.switch.options[document.simObjectForm.switch.selectedIndex].value;
-		var videoList = Array();
-		
-		document.getElementById("sim_video").src = simObjectList[object] + ".mp4";
-		document.getElementById("sim_plot").src = simObjectList[object] + ".html";
-//		document.getElementById("failure-text").textContent= failureTextList[object];
-	}
-	  
-	 
-	 
+
+  function switchSemanticOOD2Video() {
+    var object = document.semanticood2ObjectForm.switch.options[document.semanticood2ObjectForm.switch.selectedIndex].value;
+    var videoList = Array();
+
+    document.getElementById("semantic_ood2_cases").src = Semanticood2ObjectList[object] + ".mp4";
+//		document.getElementById("real_plot_failure").src = Semanticood2ObjectList[object] + ".html";
+    document.getElementById("semantic_ood2-text").textContent= Semanticood2TextList[object];
+  }
+
+  function switchVisualOOD1Video() {
+    var object = document.visualood1ObjectForm.switch.options[document.visualood1ObjectForm.switch.selectedIndex].value;
+    var videoList = Array();
+
+    document.getElementById("visual_ood1_cases").src = Visualood1ObjectList[object] + ".mp4";
+    document.getElementById("visual_ood1-text").textContent= Visualood1TextList[object];
+  }
+
+  function switchVisualOOD2Video() {
+    var object = document.visualood2ObjectForm.switch.options[document.visualood2ObjectForm.switch.selectedIndex].value;
+    var videoList = Array();
+
+    document.getElementById("visual_ood2_cases").src = Visualood2ObjectList[object] + ".mp4";
+    document.getElementById("visual_ood2-text").textContent= Visualood2TextList[object];
+  }
+  function switchIDVideo() {
+    var object = document.IDObjectForm.switch.options[document.IDObjectForm.switch.selectedIndex].value;
+    var videoList = Array();
+
+    document.getElementById("id_cases").src = IDObjectList[object] + ".mp4";
+    document.getElementById("id-text").textContent= IDTextList[object];
+  }
+  function switchComposeVideo() {
+    var object = document.ComposeObjectForm.switch.options[document.ComposeObjectForm.switch.selectedIndex].value;
+    var videoList = Array();
+
+    document.getElementById("compose_cases").src = ComposeObjectList[object] + ".mp4";
+    document.getElementById("compose-text").textContent= ComposeTextList[object];
+  }
   </script>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
@@ -129,34 +274,14 @@ via Runtime Steering for Vision-Language-Action Models">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Align Before You Act: Reasoning-Action Alignment
-via Runtime Steering for Vision-Language-Action Models</h1>
-          <!-- <h1 class="title is-5 publication-title">CoRL 2023 (Oral Presentation)</h1> -->
+          <h1 class="title is-1 publication-title">Align Before You Act: Reasoning-Action Alignment via Runtime Steering for Vision-Language-Action Models</h1>
 		  <div class="is-size-5 publication-authors">
 			<span class="author-block">Anonymous Authors</span>
-			<!-- <span class="author-block">
-				<a href="https://yilin-wu98.github.io/">Yilin Wu</a><sup>1,2,*</sup>,</span>
-				<span class="author-block">
-				<a href="https://thomasrantian.github.io/">Anqi Li</a><sup>2</sup>,</span>
-				<span class="author-block">
-				<a href="https://gokul.dev/">Tucker Hermans</a><sup>2</sup>,</span>
-				<span class="author-block">
-				<a href="https://gokul.dev/">Fabio Ramos</a><sup>2</sup>,</span>
-				<span class="author-block">
-				<a href="https://www.cs.cmu.edu/~abajcsy/">Andrea Bajcsy</a><sup>1,&dagger;</sup>
-				</span>
-				<span class="author-block">
-				<a href="https://www.cs.cmu.edu/~abajcsy/">Claudia D'Arpino</a><sup>2,&dagger;</sup>
-				</span> -->
+			
 			
           </div>
 
-          <!-- <div class="is-size-10 publication-authors">
-            <span class="author-block"><sup>1</sup>Carnegie Mellon University   </span>
-            <span class="author-block"><sup>2</sup>Nvidia</span>
-			<span class="author-block"><sup>*</sup>Work done during an internship at Nvidia</span>
-			<span class="author-block"><sup>&dagger;</sup>Equal Advising</span>
-          </div> -->
+         
 
 		  <div class="column has-text-centered">
             <div class="publication-links">
@@ -169,6 +294,15 @@ via Runtime Steering for Vision-Language-Action Models</h1>
 						<span>Appendix</span>
 					</a>
 					</span>
+          <span class="link-block">
+					<a href=""
+						class="external-link button is-normal is-rounded is-dark">
+						<span class="icon">
+							<i class="ai ai-arxiv"></i>
+						</span>
+						<span>Paper</span>
+					</a>
+					</span>
 				<span class="link-block">
 				<a href=""
 					class="external-link button is-normal is-rounded is-dark">
@@ -176,6 +310,15 @@ via Runtime Steering for Vision-Language-Action Models</h1>
 						<i class="fab fa-github"></i>
 					</span>
 					<span>Code (Coming soon)</span>
+					</a>
+				</span>
+        <span class="link-block">
+				<a href=""
+					class="external-link button is-normal is-rounded is-dark">
+					<span class="icon">
+						<i class="fab fa-github"></i>
+					</span>
+					<span>Dataset (Coming soon)</span>
 					</a>
 				</span>
             </div>
@@ -186,396 +329,31 @@ via Runtime Steering for Vision-Language-Action Models</h1>
   </div>
 </section>
 
-<!-- <section class="hero teaser">
+<section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body has-text-centered">
       <video id="teaser" autoplay muted loop playsinline width="70%">
-        <source src="./static/videos/front_video_v2.mp4"
+        <source src="./static/videos/icra_final_video.mov"
                 type="video/mp4">
       </video>
 		<br>
       <h2 class="subtitle has-text-centered">
-        Our method <span class="dnerf">FOREWARN</span> proposes a VLM-in-the-loop policy steering system to improve multi-modal generative policy's performance during deployment without retraining. 
+        Our method <span class="dnerf">SEAL</span> proposes a novel runtime steering approach to improve reasoning-action alignment in Vision Language Action models, helping the robots generate action sequences aligned with their own textual reasoning.
       </h2>
     </div>
   </div>
-</section> -->
-
-<!-- <section class="hero is-light is-small">
-	<div class="hero-body">
-	  <div class="container">
-		<div id="results-carousel" class="carousel results-carousel">
-		  
-		  
-		  
-		  
-			
-			
-		<div  class="slider" tabindex="0">
-<div class="slider-container" style="opacity: 1;  transition: 600ms; ">
-
-			</div></div><div class="slider-item is-current" data-slider-index="0" style="width: 300px;"><div class="item-5">
-				<video poster="" id="1" controls="" muted="" loop="" autoplay playsinline="" height="50%">
-					<source src="./static/videos/real_world_results/cup_handle/base_policy.mp4" type="video/mp4">
-				</video>
-				<div class="video-overlay">
-					<p>
-					  Task Description: "serve the cup of water to the guest"<br>
-					  Implied Behavior: grasp the cup by the handle 
-					  Unsteered Policy: Diffusion Policy (Base Policy)
-					</p>
-					<p style="color: red">Failure</p>
-				</div>
-			</div></div><div class="slider-item is-slide-next" data-slider-index="1" style="width: 300px;" ><div class="item-6">
-				<video poster="" id="2" controls="" muted="" loop="" autoplay playsinline="" height="50%">
-					<source src="./static/videos/real_world_results/cup_handle/forewarn.mp4" type="video/mp4">
-				</video>
-				<div class="video-overlay">
-					<p>
-						Task Description: "serve the cup of water to the guest."<br>
-						Implied Behavior: grasp the cup by the handle <br>
-						Steered Policy: FOREWARN (Ours)
-					</p>
-					<p style="color: green">Success</p>
-				</div>
-			</div></div><div class="is-slide-previous" data-slider-index="2" style="width: 300px;" >
-				<div class="item-1">
-			<video poster="" id="3" controls="" muted="" loop=""  autoplay playsinline="" height="50%">
-				<source src="./static/videos/real_world_results/cup_rim/base_policy.mp4" type="video/mp4">
-			</video>
-			<div class="video-overlay">
-				<p>
-					Task Description: "The handle is covered with oil."<br>
-					Implied Behavior: grasp the cup by the rim <br>
-					Unsteered Policy: Diffusion Policy (Base Policy)
-				  </p>
-				  <p style="color: red">Failure</p>
-			</div>
-		  </div></div><div class="slider-item" data-slider-index="3" data-cloned="true" style="width: 300px;"><div class="item-2">
-			  <video poster="" id="4" controls="" muted="" loop="" autoplay playsinline="" height="50%">
-				  <source src="./static/videos/real_world_results/cup_rim/forewarn.mp4" type="video/mp4">
-			  </video>
-			  <div class="video-overlay">
-				  <p>
-					Task Description: "The handle is covered with oil."<br>
-					Implied Behavior: grasp the cup by the rim <br>
-					Steered Policy: FOREWARN (Ours)
-					</p>
-				  </p>
-				  <p style="color: green">Success</p>
-			  </div>
-		  </div></div><div class="slider-item" data-slider-index="4" data-cloned="true" style="width: 300px;" ><div class="item-3">
-			  <video poster="" id="5" controls="" muted="" loop="" autoplay playsinline="" height="50%">
-				  <source src="./static/videos/real_world_results/bag_edge/base_policy.mp4" type="video/mp4">
-			  </video>
-			  <div class="video-overlay">
-				  <p>
-					Task Description: "minimize the contact region to avoid crushing contents inside"<br>
-					Implied Behavior: grasp the bag via the edge<br>
-					Unsteered Policy: Diffusion Policy (Base Policy)
-				  </p>
-				  <p style="color: red">Failure</p>
-			  </div>
-		  
-		  </div></div><div class="slider-item" data-slider-index="5" data-cloned="true" style="width: 300px;" ><div class="item-4">
-			  <video poster="" id="6" controls="" muted="" loop="" autoplay playsinline="" height="50%">
-				  <source src="./static/videos/real_world_results/bag_edge/forewarn.mp4" type="video/mp4">
-			  </video>
-			  <div class="video-overlay">
-				  <p>
-					Task Description: "minimize the contact region to avoid crushing contents inside"<br>
-					Implied Behavior: grasp the bag via the edge<br>
-					Steered Policy: FOREWARN (Ours)
-				  </p>
-				  <p style="color: green">Success</p>
-			  </div>
-		  </div></div><div class="slider-item" data-slider-index="6" data-cloned="true" style="width: 300px;"><div class="item-5">
-			  <video poster="" id="7" controls="" muted="" loop="" autoplay playsinline="" height="50%">
-				  <source src="./static/videos/real_world_results/bag_middle/base_policy.mp4" type="video/mp4">
-			  </video>
-			  <div class="video-overlay">
-				  <p>
-					Task Description: "maximize the stability without dropping the bag"<br>
-					Implied Behavior: grasp the bag via the middle part<br>
-					Unsteered Policy: Diffusion Policy (Base Policy)
-				  </p>
-				  <p style="color: red">Failure</p>
-				  
-			  </div>
-			</div></div><div class="slider-item" data-slider-index="6" data-cloned="true" style="width: 300px;"><div class="item-5">
-				<video poster="" id="7" controls="" muted="" loop="" autoplay playsinline="" height="50%">
-					<source src="./static/videos/real_world_results/bag_middle/forewarn.mp4" type="video/mp4">
-				</video>
-				<div class="video-overlay">
-					<p>
-					  Task Description: "maximize the stability without dropping the bag"<br>
-					  Implied Behavior: grasp the bag via the middle part<br>
-					  Steered Policy: FOREWARN (Ours)
-					</p>
-					<p style="color: green">Success</p>
-					
-				</div>
-		  </div></div></div>
- <div class="slider-navigation-previous">
-	<svg viewBox="0 0 50 80" xml:space="preserve">
-<polyline fill="currentColor" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 ">
-
-</polyline>
-</svg>
-</div>
-<div class="slider-navigation-next"><svg viewBox="0 0 50 80" xml:space="preserve">
-<polyline fill="currentColor" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 ">
-
-</polyline>
-</svg>
-</div>
-<div class="slider-pagination">
-	<div class="slider-page" data-index="0">
-
-	</div>
-	<div class="slider-page" data-index="1">
-
-</div>
-<div class="slider-page" data-index="2"></div><div class="slider-page" data-index="3">
-
-</div>
-<div class="slider-page" data-index="4">
-
-</div>
-<div class="slider-page is-active" data-index="5">
-
-</div> 
-</div></div></div>
-	  </div>
-	</div>
-  </section> -->
-
-
-		<!-- <div class="slider" tabindex="0">
-			<div class="slider-container" style="opacity: 1; width: 7809px; transition: 300ms; transform: translate3d(-3715px, 0px, 0px);">
-				<div class="slider-item" data-slider-index="-4" data-cloned="true" style="width: 411px;">
-					<div class="item-3">
-	
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="50%">
-            <source src="./static/videos/real_world_results/cup_handle/forewarn.mp4"
-                    type="video/mp4">
-					
-          </video>
-		  <div class="video-overlay">
-			<p>
-			  Task: "place the carrot on yellow plate"<br>
-			  Scenario: object distractors <br>
-			  Policy: Octo-Base <b>with BYOVLA</b>
-			</p>
-			<p style="color: green">Success</p>
-		</div>
-        </div>
-		</div>
-
-		
-				<div class="slider-item" data-slider-index="-3" data-cloned="true" style="width: 411px;">
-					<div class="item-4">
-	
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="50%">
-            <source src="./static/videos/real_world_results/cup_handle/forewarn.mp4"
-                    type="video/mp4">
-					
-          </video>
-		  <div class="video-overlay">
-			<p>
-			  Task: "place the carrot on yellow plate"<br>
-			  Scenario: object distractors <br>
-			  Policy: Octo-Base <b>with BYOVLA</b>
-			</p>
-			<p style="color: green">Success</p>
-		</div>
-        </div>
-		</div>
-	
-		
-				<div class="slider-item" data-slider-index="-2" data-cloned="true" style="width: 411px;">
-					<div class="item-5">
-	
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="50%">
-            <source src="./static/videos/real_world_results/cup_handle/forewarn.mp4"
-                    type="video/mp4">
-					
-          </video>
-		  <div class="video-overlay">
-			<p>
-			  Task: "place the carrot on yellow plate"<br>
-			  Scenario: object distractors <br>
-			  Policy: Octo-Base <b>with BYOVLA</b>
-			</p>
-			<p style="color: green">Success</p>
-		</div>
-        </div>
-		</div>
-		
-		
-				<div class="slider-item" data-slider-index="-1" data-cloned="true" style="width: 411px;">
-					<div class="item-6">
-	
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="50%">
-            <source src="./static/videos/real_world_results/cup_handle/forewarn.mp4"
-                    type="video/mp4">
-					
-          </video>
-		  <div class="video-overlay">
-			<p>
-			  Task: "place the carrot on yellow plate"<br>
-			  Scenario: object distractors <br>
-			  Policy: Octo-Base <b>with BYOVLA</b>
-			</p>
-			<p style="color: green">Success</p>
-		</div>
-        </div>
-		</div>
-		</div>
-		</div> -->
-         <!-- <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="50%">
-            <source src="./static/videos/real_world_results/cup_rim/forewarn.mp4"
-                    type="video/mp4">
-          </video>
-        </div> -->
-		<!-- <div class="item item-chair-tp">
-			<video poster="" id="chair-tp" autoplay controls muted loop playsinline height="50%">
-			  <source src="./static/videos/real_world_results/cup_rim/forewarn.mp4"
-					  type="video/mp4">
-			</video>
-		  </div> -->
-        <!--<div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="50%">
-            <source src="./static/videos/real_world_results/bag_edge/forewarn.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="50%">
-            <source src="./static/videos/real_world_results/bag_middle/forewarn.mp4"
-                    type="video/mp4">
-          </video>
-        </div> -->
-    
-        
-      <!-- </div>
-    </div>
-  </div> -->
-
-
-<!-- <section class="section">
-	<div class="container is-fluid">
+</section>
   
-	  <div class="columns is-centered">
-  
-		
-		<div class="column">
-		  <div class="content">
-			<h2 class="title is-3">Visual Effects</h2>
-			<p>
-			  Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-			  would be impossible without nerfies since it would require going through a wall.
-			</p>
-			<video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-			  <source src="./static/videos/real_world_results/cup_handle/vlmact.mp4"
-					  type="video/mp4">
-			</video>
-		  </div>
-		</div>
-	
-  
-
-		<div class="column">
-		  <h2 class="title is-3">Matting</h2>
-		  <div class="columns is-centered">
-			<div class="column content">
-			  <p>
-				As a byproduct of our method, we can also solve the matting problem by ignoring
-				samples that fall outside of a bounding box during rendering.
-			  </p>
-			  <video id="matting-video" controls playsinline height="100%">
-				<source src="./static/videos/real_world_results/cup_handle/vlmact.mp4"
-						type="video/mp4">
-			  </video>
-			</div>
-  
-		  </div>
-		</div>
-		<div class="column">
-			<h2 class="title is-3">Matting</h2>
-			<div class="columns is-centered">
-			  <div class="column content">
-				<p>
-				  As a byproduct of our method, we can also solve the matting problem by ignoring
-				  samples that fall outside of a bounding box during rendering.
-				</p>
-				<video id="matting-video" controls playsinline height="100%">
-				  <source src="./static/videos/real_world_results/cup_handle/vlmact.mp4"
-						  type="video/mp4">
-				</video>
-			  </div>
-	
-			</div>
-		  </div>
-		  <div class="column">
-			<h2 class="title is-3">Matting</h2>
-			<div class="columns is-centered">
-			  <div class="column content">
-				<p>
-				  As a byproduct of our method, we can also solve the matting problem by ignoring
-				  samples that fall outside of a bounding box during rendering.
-				</p>
-				<video id="matting-video" controls playsinline height="100%">
-				  <source src="./static/videos/real_world_results/cup_handle/vlmact.mp4"
-						  type="video/mp4">
-				</video>
-			  </div>
-	
-			</div>
-		  </div>
-		  <div class="column">
-			<h2 class="title is-3">Matting</h2>
-			<div class="columns is-centered">
-			  <div class="column content">
-				<p>
-				  As a byproduct of our method, we can also solve the matting problem by ignoring
-				  samples that fall outside of a bounding box during rendering.
-				</p>
-
-				<video id="matting-video" controls playsinline height="100%">
-					
-				  <source src="./static/videos/real_world_results/cup_handle/vlmact.mp4"
-						  type="video/mp4">
-				</video>
-			  </div>
-	
-			</div>
-		  </div>
-	  </div>
-
- 
-</div>
-
-	
-  
-  
-  </section>
-   -->
-  
-   <!--  -->
-  
-
-<!-- <section class="section">
+<section class="section">
   <div class="container is-max-desktop">
-     Abstract.
+    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           	<p>
-				While generative robot policies have demonstrated significant potential in learning complex, multimodal behaviors from demonstrations, they still exhibit diverse failures at deployment-time. Policy steering offers an elegant solution to reducing the chance of failure by using an external verifier to select from low-level actions proposed by an imperfect generative policy. Here, one might hope to use a Vision Language Model (VLM) as a verifier, leveraging its open-world reasoning capabilities. However, off-the-shelf VLMs struggle to understand the consequences of low-level robot actions as they are represented fundamentally differently than the text and images the VLM was trained on. In response, we propose FOREWARN, a novel framework to unlock the potential of VLMs as open-vocabulary verifiers for runtime policy steering. Our key idea is to decouple the VLM’s burden of predicting action outcomes (foresight) from evaluation (forethought). For foresight, we leverage a latent world model to imagine future latent states given diverse low-level action plans. For forethought, we align the VLM with these predicted latent states to reason about the consequences of actions in its native representation—natural language—and effectively filter proposed plans. We validate our framework across diverse robotic manipulation tasks, demonstrating its ability to bridge representational gaps and provide robust, generalizable policy. </p>
-        </div>
+				Reasoning Vision Language Action (VLA) models improve robotic instruction-following by generating step-by-step textual plans before low-level actions, an approach inspired by Chain-of-Thought (CoT) reasoning in language models. Yet even with a correct textual plan, the generated actions can still miss the intended outcomes in the plan, especially in out-of-distribution (OOD) scenarios. We formalize this phenomenon as a lack of embodied CoT faithfulness, and introduce a training-free, runtime policy steering method for reasoning-action alignment. Given a reasoning VLA’s intermediate textual plan, our framework samples multiple candidate action sequences from the same model, predicts their outcomes via simulation, and uses a pre-trained Vision-Language Model (VLM) to select the sequence whose outcome best aligns with the VLA’s own textual plan. Only executing action sequences that align with the textual reasoning turns our base VLA’s natural action diversity from a source of error into a strength, boosting robustness to semantic and visual OOD perturbations and enabling novel behavior composition without costly re-training. We also contribute a reasoning-annotated extension of LIBERO-100, environment variations tailored for OOD evaluation, and demonstrate up to 15% performance gain over prior work on behavior composition tasks and scales with compute and data diversity.
+ </p>
       </div>
     </div>
   </div>
@@ -583,797 +361,345 @@ via Runtime Steering for Vision-Language-Action Models</h1>
 
 <section class="section">
   <div class="container is-max-desktop">
-     Animation. 
+    <!-- Animation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-	  	<h2 class="title is-3"><span class="dnerf"> FOREWARN</span></h2>
-		<h3 class="title is-4"> <span class="dnerf">Filtering Options via REpresenting World-model Action Rollouts via Narration </span> </h3>
+	  	<h2 class="title is-3"><span class="dnerf"> SEAL</span></h2>
+		<h3 class="title is-4"> <span class="dnerf">Steering for Embodied reasoning-action ALignment </span> </h3>
 	  	<br>
-		<img src="static/figures/method.png" alt="Method Figure">
+		<img src="static/figures/method_overview.png" alt="Method Figure">
 		<br><br>
 		<p>
-			We present our method FOREWARN, an VLM-in-the-loop policy steering algorithm for multi-modal generative robot policies.
-Our key idea is to decouple the VLM’s burden of predicting action outcomes from evaluation. By predicting action outcomes
-with a pre-trained latent dynamics model and aligning a VLM to reason about these latent states in text, FOREWARN can
-select action plans at runtime that are most appropriate for new task contexts and user needs.
+		Reasoning Vision Language Action (VLA) models interleave textual planning and action generation. After generating a text plan which describes intermediate goals, we sample a batch of action sequences, forward simulate their outcomes until the model switches to think again. We then use a Vision Language model (VLM) verifier to score alignment between the action’s outcomes and the text plan. This improves the embodied CoT faithfulness at runtime by executing only action samples that achieve the outcome of the text plan
 		</p>
 	</div>
 		
 	</div>
   </div>
 </section>
-
 <section class="section">
-	<div class="container is-max-desktop">
-	   Animation. 
-	  <div class="columns is-centered">
-		<div class="column is-full-width">
-			<h2 class="title is-3"> Training Pipeline</h2>
-			<br>
-		  <img src="static/figures/architecture_figure.png" alt="Training Pipeline">
-		  <br><br>
-		  <p>
-			On the left, a world model is pretrained to learn good latent embeddings of the
-			dynamics conditioned on the observations and actions. On the right, the sequence of learned latent embeddings is
-			projected through a linear layer to the text embedding space, similar to the original vision token processing in the Llama-3.2
-			Model. The projection layer and Llama model are finetuned together using LoRA, but the world model remains frozen. We finetune the VLM to align the latent embedding with underlying textual representation so we design a visual question answering task to ask VLM to generate behavior narrations that capture nuanced details.
-		  </p>
-	  </div>
-		  
-	  </div>
-	</div>
-  </section>
-
-  
-
-
-<section class="section" id="real-world-results">
-	<div class="container is-fluid">
-	   Section Title 
-	 <div class="container is-max-desktop">
-	  <div class="columns">
-		<div class="column is-four-fifths">
-		  <h2 class="title is-3">Real World Results</h2>
-		</div>
-		</div>
-	  </div>
-	  <div class="container is-max-desktop">
+    <div class="container is-max-desktop">
 	  <div class ="columns ">
 		<div class="column is-full-width" style="margin-top: 20px;">
-			<h3 class="title is-4">Qualitative Results for Behavior Narration</h3>
-			<p>We demonstrate real-world deployments of our system across various tasks.</p> 
-			 <p><span style="font-weight: bold;font-size: 20px"> Baselines </span><br>
-				<span id="text" style="font-weight: bold;font-size: 18px;color:#FF9300"> FOREWARN </span> : our proposed method using the world model for predicting the latent states of the future and finetuned VLM for generating behavior narrations.<br>
-				<span id="text" style="font-weight: bold;font-size: 18px;color:#a54c00"> FOREWARN-Oracle </span>: an upper-bound on our approach's
-				performance assuming access to ground-truth future observations (instead of relying on
-				the latent dynamics to predict future outcomes).<br>
-				<span id="text" style="font-weight: bold;font-size: 18px;color:#26A6D5">VLM-Act </span>: directly fine-tuning the original Llama-3.2-11B-Vision-Instruct model to generate behavior narrations end-to-end from current observation and an action plan(represented as text), without explicitly predicting outcomes with a world model. <br>
-				<span id="text" style="font-weight: bold;font-size: 18px;color:#0d79ca">VLM-Img </span>: using a GPT-4o to generate behavior narrations in a zero-shot manner from the predicted visual observations from the world model.<br>
-				<span id="text" style="font-weight: bold;font-size: 18px;color:#233c80"> VLM-Img-Oracle </span>: an upper-bound on the performance of VLM-Img, assuming access to ground-truth visual observations.<br>
-				<br>
-				On the left are videos of the ground-truth observations. On the right are the prompt used for querying and the generated behavior narrations. Only
-				<span id="text" style="font-weight: bold;font-size: 15px;color:#FF9300"> FOREWARN </span> and
-						   <span id="text" style="font-weight: bold;font-size: 15px;color:#a54c00"> FOREWARN-Oracle </span>  consistently produce accurate outcome narrations, effectively capturing nuanced motion details. In contrast, the baselines frequently hallucinate or fail to
-				capture critical contact details between the gripper and objects.
-				  For instance, in the Bag task, <span id="text" style="font-weight: bold;font-size: 15px;color:#26A6D5">VLM-Act </span>, 
-				<span id="text" style="font-weight: bold;font-size: 15px;color:#0d79ca"> VLM-Img </span>, 
-				and <span id="text" style="font-weight: bold;font-size: 15px;color:#233c80"> VLM-Img-Oracle </span>  all hallucinate that the robot is grasping the edge of the
-				bag, whereas it is actually grasping the middle.
+			<h3 class="title is-4">Baselines</h3>
+			 <!-- <p><span style="font-weight: bold;font-size: 20px"> Baselines </span><br> -->
+				<span id="text" style="font-weight: bold;font-size: 18px;color:#FA821C"> SEAL (ours) </span> : a novel runtime steering method that verifies an entire action sequence against VLA's self-generated textual plan using a pre-trained VLM as the critic.<br>
+				<span id="text" style="font-weight: bold;font-size: 18px;color:#646464"> &#960;<sub>0</sub> - reason </span>:  the base reasoning VLA model from OneTwoVLA trained with our reasoning annotated data without runtime verification and steering. It is a direct ablation of our primary contribution<br>
+				<span id="text" style="font-weight: bold;font-size: 18px;color:#C979E6">&#960;<sub>0</sub>-V-GPS </span>: a state-of-the-art runtime steering method. It trains a critic Q-function using offline reinforcement learning and, at runtime, executes the action chunk with the highest Q-value from a set of policy samples <br>
+				<span id="text" style="font-weight: bold;font-size: 18px;color:#E2B6FF">&#960;<sub>0</sub> </span>: a vanilla VLA that directly maps visual-language inputs to actions without any intermediate textual reasoning..<br>		
 			</p>
-		
+
 		 </div>
 		</div>
 		</div>
-		 <section class="section"> 
-			<div class="container is-max-desktop">
-			  Two columns 
-			   Right column (video) - smaller width 
-			   <div class ="columns is-centered has-text-centered">
-				<div class="column is-four-fifths">
-					<h4 class="title is-5">Cup Task</h4>
+</section>
 
-					
-				 </div>
-				</div>
-			   <div class="columns">
-				
-				<div class="column is-one-third has-text-centered">
-				<video
-				style="width: 60%;"
-				autoplay
-				loop
-				muted
-				playsinlines
-				controls
-			  >
-				<source src="static/videos/cup_wrist_bn.mp4" type="video/mp4">
-				
-			  </video>
-			</div>
-		
-
-				
-				
-				 
-				<div class="column is-two-thirds has-text-centered">
-					<img
-					  src="static/figures/cup_wrist_bn.png"
-					  alt="Left image"
-					  style="width: 85%;"
-					/>
-			
-				</div>
-			</div>
-			</div>
-			<div class="container is-max-desktop">
-				
-				 <div class ="columns is-centered has-text-centered">
-				  <div class="column is-four-fifths">
-					  <h4 class="title is-5">Bag Task</h4>
-  
-					 
-			
-				   </div>
-				  </div>
-				 <div class="columns">
-				  
-				  <div class="column is-one-third has-text-centered">
-				  <video
-				  style="width: 60%;"
-				  autoplay
-				  loop
-				  muted
-				  playsinlines
-				  controls
-				>
-				  <source src="static/videos/bag_wrist_bn.mp4" type="video/mp4">
-				 
-				</video>
-			  </div>
-		  
-  
-				  
-				  
-					
-				  <div class="column is-two-thirds has-text-centered">
-					  <img
-						src="static/figures/bag_wrist_bn.png"
-						alt="Left image"
-						style="width: 85%;"
-					  />
-			  
-				  </div>
-			  </div>
-			  </div>
-		
-		  
-		<div class="container is-max-desktop">
-			
-		<div class ="columns">
-			<div class="column is-full-width" style="margin-top: 100px;">
-				<h3 class="title is-4">Quantitative Results for Behavior Narration</h3>
-				<div class="container is-max-desktop">
-					<p>We conduct experiments to show the alignment between predicted behavior narrations from different methods and ground-truth narrations. 
-						<span id="text" style="font-weight: bold;font-size: 15px;color:#FF9300"> FOREWARN </span>
-						outperforms all baselines across both tasks and achieves performance comparable to
-						 <span id="text" style="font-weight: bold;font-size: 15px;color:#a54c00"> FOREWARN-Oracle </span> , 
-						 which has access to ground-truth action outcomes and represents the upper bound for our approach. 
-		</p>
-	  <img src="static/figures/behavior_narration.png" alt="behavior narration" style="width: 100%;"> 
-	</div>
-				
-			 </div>
-			</div>
-			</div>
-		<div class="container is-max-desktop">
-	  <div class ="columns">
-		<div class="column is-full-width" style="margin-top: 100px;">
-			<h3 class="title is-4">Qualitative Results for Policy Steering</h3>
-			<p><span style="font-weight: bold;font-size: 20px"> Baselines </span><br>
-				<span id="text" style="font-weight: bold;font-size: 18px;color:#FF9300"> FOREWARN </span> : our proposed method that (1)predicts the action outcomes with the world model in latent space; (2)generates behavior narrations with finetuned VLM from latent states of the future; (3)selects the best action plan using the same VLM based on the task description and narrations.<br>
-				<span id="text" style="font-weight: bold;font-size: 18px;color:#26A6D5">VLM-Act </span>: directly finetuning the VLM to generate behavior narrations from observations and the action plans without explicit world model while keeping (3) same as our method. <br>
-				<span id="text" style="font-weight: bold;font-size: 18px;color:#724F8F">VLM-DynLat-Category </span>: keeping (1) similar to our method while directly finetuning VLM to generate a set of indices for valid action plans based on task descriptions and predicted latent states of the future, combining (2) and (3) together.<br>
-				<span id="text" style="font-weight: bold;font-size: 18px;color:#CE5C7C">Classifier-Dyn-Latent </span>: similar to <span id="text" style="font-weight: bold;font-size: 15px;color:#724F8F">VLM-DynLat-Category </span> but using a learned classifier instead a VLM to predict success/failure for each plan and randomly select from the successful plans.<br>
-				
-				<br>
-				Our results demonstrate that <span id="text" style="font-weight: bold;font-size: 15px;color:#FF9300"> FOREWARN </span>  can effectively steer the policy towards safe and aligned behavior modes by leverging the VLM as an interpreter and evaluator of predicted latent action outcomes. It outperforms <span id="text" style="font-weight: bold;font-size: 15px;color:#26A6D5">VLM-Act </span> in all tasks and <span id="text" style="font-weight: bold;font-size: 15px;color:#CE5C7C">Classifier-Dyn-Latent </span> as well as <span id="text" style="font-weight: bold;font-size: 15px;color:#724F8F">VLM-DynLat-Category </span> in novel task descriptions (not seen during training). </p>
-		
-		 <p></p>
-		 </div>
-		</div>
-		</div>
-		<div calss ="columns is-centered has-text-centered">
-			<div class="column is-one-fifths">
-			
-				<div class="container is-fluid" style="text-align: center;">
-	  <img src="static/figures/cup_task.png" alt="Task Scenario 1" style="width: 80%;">
-	</div>
-			
-			 </div>
-			</div>
-
-	  <div class="columns">
-		
-		
-		<div class="column is-one-fifth has-text-centered">
-			<span id="text" style="font-weight: bold;font-size: 15px;color:#000000"> Base Policy </span>
-
-		  <video
-			autoplay
-			loop
-			muted
-			playsinline
-			controls
-			width="100%"
-			style="border-radius: 10px;">
-			<source src="static/videos/real_world_results/cup_handle/base_policy.mp4" type="video/mp4">
-		  </video>
-		</div>
-		
-
-		<div class="column is-one-fifth has-text-centered">
-			<span id="text" style="font-weight: bold;font-size: 15px;color:#FF9300"> FOREWARN </span>
-
-		  <video
-			autoplay
-			loop
-			muted
-			playsinline
-			controls
-			width="100%"
-			style="border-radius: 10px;">
-			<source src="static/videos/real_world_results/cup_handle/forewarn.mp4" type="video/mp4">
-		  </video>
-		</div>
-		
-	
-		<div class="column is-one-fifth has-text-centered">
-			<span id="text" style="font-weight: bold;font-size: 15px;color:#26A6D5">VLM-Act </span>
-
-		  <video
-			autoplay
-			loop
-			muted
-			playsinline
-			controls
-			width="100%"
-			style="border-radius: 10px;">
-			<source src="static/videos/real_world_results/cup_handle/vlmact.mp4" type="video/mp4">
-		  </video>
-		</div>
-		
-		
-		<div class="column is-one-fifth has-text-centered">
-			<span id="text" style="font-weight: bold;font-size: 15px;color:#724F8F">VLM-DynLat-Category </span>
-
-		  <video
-			autoplay
-			loop
-			muted
-			playsinline
-			controls
-			width="100%"
-			style="border-radius: 10px;">
-			<source src="static/videos/real_world_results/cup_handle/vlm_dynlat_cat.mp4" type="video/mp4">
-		  </video>
-		</div>
-		
-		
-		<div class="column is-one-fifth has-text-centered">
-			<span id="text" style="font-weight: bold;font-size: 15px;color:#CE5C7C">Classifier-Dyn-Latent </span>
-
-		  <video
-			autoplay
-			loop
-			muted
-			playsinline
-			controls
-			width="100%"
-			style="border-radius: 10px;">
-			<source src="static/videos/real_world_results/cup_handle/classifier_dyn_lat.mp4" type="video/mp4">
-		  </video>
-		</div>
-		
-	  </div>
-	  
-  
-
-	<div calss ="columns is-centered has-text-centered">
-		<div class="column is-one-fifths">
-	
-			<div class="container is-fluid" style="text-align: center;">
-  <img src="static/figures/bag_task.png" alt="Task Scenario 2" style="width: 80%;">
-</div>
-	
-		
-		 </div>
-		</div>
-  <div class="columns">
-	
-
-	<div class="column is-one-fifth has-text-centered">
-		<span id="text" style="font-weight: bold;font-size: 15px;color:#000000"> Base Policy </span>
-
-	  <video
-		autoplay
-		loop
-		muted
-		playsinline
-		controls
-		width="100%"
-		style="border-radius: 10px;">
-		<source src="static/videos/real_world_results/bag_edge/base_policy.mp4" type="video/mp4">
-	  </video>
-	</div>
-	
-	
-	<div class="column is-one-fifth has-text-centered">
-		<span id="text" style="font-weight: bold;font-size: 15px;color:#FF9300"> FOREWARN </span>
-
-	  <video
-		autoplay
-		loop
-		muted
-		playsinline
-		controls
-		width="100%"
-		style="border-radius: 10px;">
-		<source src="static/videos/real_world_results/bag_edge/forewarn.mp4" type="video/mp4">
-	  </video>
-	</div>
-	
-	
-	<div class="column is-one-fifth has-text-centered">
-		<span id="text" style="font-weight: bold;font-size: 15px;color:#26A6D5">VLM-Act </span>
-
-	  <video
-		autoplay
-		loop
-		muted
-		playsinline
-		controls
-		width="100%"
-		style="border-radius: 10px;">
-		<source src="static/videos/real_world_results/bag_edge/vlmact.mp4" type="video/mp4">
-	  </video>
-	</div>
-	
-	
-	<div class="column is-one-fifth has-text-centered">
-		<span id="text" style="font-weight: bold;font-size: 15px;color:#724F8F">VLM-DynLat-Category </span>
-
-	  <video
-		autoplay
-		loop
-		muted
-		playsinline
-		controls
-		width="100%"
-		style="border-radius: 10px;">
-		<source src="static/videos/real_world_results/bag_edge/vlm_dynlat_cat.mp4" type="video/mp4">
-	  </video>
-	</div>
-	
-	
-	<div class="column is-one-fifth has-text-centered">
-		<span id="text" style="font-weight: bold;font-size: 15px;color:#CE5C7C">Classifier-Dyn-Latent </span>
-
-	  <video
-		autoplay
-		loop
-		muted
-		playsinline
-		controls
-		width="100%"
-		style="border-radius: 10px;">
-		<source src="static/videos/real_world_results/bag_edge/classifier_dyn_lat.mp4" type="video/mp4">
-	  </video>
-	</div>
-	
-  </div>
-
-  <div calss ="columns is-centered has-text-centered">
-	<div class="column is-one-fifths">
-		
-		<div class="container is-fluid" style="text-align: center;">
-<img src="static/figures/cup_new.png" alt="Task Scenario 3" style="width: 80%;"> 
-</div>
-		
-
-	 </div>
-	</div>
-<div class="columns">
-
-
-<div class="column is-one-fifth has-text-centered">
-	<span id="text" style="font-weight: bold;font-size: 15px;color:#000000"> Base Policy </span>
-
-  <video
-	autoplay
-	loop
-	muted
-	playsinline
-	controls
-	width="100%"
-	style="border-radius: 10px;">
-	<source src="static/videos/real_world_results/cup_rim/base_policy.mp4" type="video/mp4">
-  </video>
-</div>
-
-
-<div class="column is-one-fifth has-text-centered">
-	<span id="text" style="font-weight: bold;font-size: 15px;color:#FF9300"> FOREWARN </span>
-
-  <video
-	autoplay
-	loop
-	muted
-	playsinline
-	controls
-	width="100%"
-	style="border-radius: 10px;">
-	<source src="static/videos/real_world_results/cup_rim/forewarn.mp4" type="video/mp4">
-  </video>
-</div>
-
-
-<div class="column is-one-fifth has-text-centered">
-	<span id="text" style="font-weight: bold;font-size: 15px;color:#26A6D5">VLM-Act </span>
-
-  <video
-	autoplay
-	loop
-	muted
-	playsinline
-	controls
-	width="100%"
-	style="border-radius: 10px;">
-	<source src="static/videos/real_world_results/cup_rim/vlmact.mp4" type="video/mp4">
-  </video>
-</div>
-
-
-<div class="column is-one-fifth has-text-centered">
-	<span id="text" style="font-weight: bold;font-size: 15px;color:#724F8F">VLM-DynLat-Category </span>
-
-  <video
-	autoplay
-	loop
-	muted
-	playsinline
-	controls
-	width="100%"
-	style="border-radius: 10px;">
-	<source src="static/videos/real_world_results/cup_rim/vlm_dynlat_cat.mp4" type="video/mp4">
-  </video>
-</div>
-
-
-<div class="column is-one-fifth has-text-centered">
-	<span id="text" style="font-weight: bold;font-size: 15px;color:#CE5C7C">Classifier-Dyn-Latent </span>
-
-  <video
-	autoplay
-	loop
-	muted
-	playsinline
-	controls
-	width="100%"
-	style="border-radius: 10px;">
-	<source src="static/videos/real_world_results/cup_rim/classifier_dyn_lat.mp4" type="video/mp4">
-  </video>
-</div>
-
-</div>
-<div calss ="columns is-centered has-text-centered">
-	<div class="column is-one-fifths">
-		
-		<div class="container is-fluid" style="text-align: center;">
-<img src="static/figures/bag_new.png" alt="Task Scenario 4" style="width: 80%;">
-</div>
-
-	 </div>
-	</div>
-<div class="columns">
-
-
-<div class="column is-one-fifth has-text-centered">
-	<span id="text" style="font-weight: bold;font-size: 15px;color:#000000"> Base Policy </span>
-
-  <video
-	autoplay
-	loop
-	muted
-	playsinline
-	controls
-	width="100%"
-	style="border-radius: 10px;">
-	<source src="static/videos/real_world_results/bag_middle/base_policy.mp4" type="video/mp4">
-  </video>
-</div>
-
-
-<div class="column is-one-fifth has-text-centered">
-	<span id="text" style="font-weight: bold;font-size: 15px;color:#FF9300"> FOREWARN </span>
-
-  <video
-	autoplay
-	loop
-	muted
-	playsinline
-	controls
-	width="100%"
-	style="border-radius: 10px;">
-	<source src="static/videos/real_world_results/bag_middle/forewarn.mp4" type="video/mp4">
-  </video>
-</div>
-
-
-<div class="column is-one-fifth has-text-centered">
-	<span id="text" style="font-weight: bold;font-size: 15px;color:#26A6D5">VLM-Act </span>
-
-  <video
-	autoplay
-	loop
-	muted
-	playsinline
-	controls
-	width="100%"
-	style="border-radius: 10px;">
-	<source src="static/videos/real_world_results/bag_middle/vlmact.mp4" type="video/mp4">
-  </video>
-</div>
-
-
-<div class="column is-one-fifth has-text-centered">
-	<span id="text" style="font-weight: bold;font-size: 15px;color:#724F8F">VLM-DynLat-Category </span>
-
-  <video
-	autoplay
-	loop
-	muted
-	playsinline
-	controls
-	width="100%"
-	style="border-radius: 10px;">
-	<source src="static/videos/real_world_results/bag_middle/vlm_dynlat_cat.mp4" type="video/mp4">
-  </video>
-</div>
-
-
-<div class="column is-one-fifth has-text-centered">
-	<span id="text" style="font-weight: bold;font-size: 15px;color:#CE5C7C">Classifier-Dyn-Latent </span>
-
-  <video
-	autoplay
-	loop
-	muted
-	playsinline
-	controls
-	width="100%"
-	style="border-radius: 10px;">
-	<source src="static/videos/real_world_results/bag_middle/classifier_dyn_lat.mp4" type="video/mp4">
-  </video>
-</div>
-
-</div>
-</div>
-<div class="container is-max-desktop">
-	<div class="columns">
-	<div class="column is-four-fifths" style="margin-top: 100px;">
-		<h3 class="title is-4">Quantitative Results for Policy Steering</h3>
-	 </div>
-	</div>
-	
-	<div style="text-align: center;">
-		<video 
-		  style="width: 90%;" 
-		  controls
-		  autoplay 
-		  loop 
-		  muted 
-		  playsinline
-		>
-		  <source src="static/videos/policy_steering_quantitativre.mp4" type="video/mp4">
-		  
-		  
-		</video>
-	  </div>
-	</div>
-	
-  </section>-->
-  
-  <!--	Real Robot Success-->
-<!-- <section class="section">
-	<div class="columns is-centered">
-		<h2 class="title is-3"><span class="dnerf"> Real Robot Results </span></h2>
-	</div>
-	<br>
-	
-	
-	<div class="columns is-centered">
-		<h3 class="title is-4"> Successes </h3>
-	</div>
-	<br>
-	
-	<div class="columns is-centered">
-		<p>
-			Object: &nbsp
-	  </p>
-	  <form method="" action="" name="successObjectForm">
-		<select size="1" name="switch" onchange="switchSuccessVideo();">
-			<option value="1">Blue Cup</option>
-			<option value="2">Box</option>
-			<option value="9">Wood Block</option>
-			<option value="4">Milk Carton</option>
-			<option value="3">Hook</option>
-			<option value="7">Toy Block</option>
-			<option value="5">Red Bottle</option>
-			<option value="8">Toy Bridge</option>
-			<option value="6">Red Mug</option>
-			<option value="0">Black Mug</option>
-		</select>
-		</form>
-	</div>
-</section> -->
-
-	
-<!--	success video-->
-<!-- <div class="container is-centered is-max-desktop">
-	<video id="real_video_success"
-		 controls
-		 muted
-		 preload
-		 playsinline
-		 width="100%">
-		<source src="./static/demos/success/blue-cup.mp4"
-				type="video/mp4">
-	</video> -->
-<!--	<embed type="text/html" src="./static/demos/success/blue-cup.html" width="35%" height="500" id="real_plot_success">-->
-<!-- </div>
-<br> 
-
-	
-real robot failures
 <section class="section">
 	<div class="container is-max-desktop">
 	<div class="columns">
-		<h3 class="title is-4"> Failure Modes </h3>
+		<h3 class="title is-4"> In-Distribution Scenarios </h3>
 	</div>
 	<br>
-	
-	<div class="columns is-centered is-four-fifths">
+  <p>With reasoning-action alignment, <b>SEAL (our method)</b> improves performance of reasoning VLAs on in-distribution tasks.</p>
+	<img src="static/figures/libero_compose.png" alt="ID Tasks Figure">
+	<div class="columns is-centered is-two-fifths">
 		<span>
-			<b> Interactive Visuliazation: </b>&nbsp; Drag the slider to visualize different failure modes.
+			<b> Interactive Visuliazation: </b>&nbsp; Drag the slider to visualize in-distribution scenarios for each task in LIBERO-10.
 		</span>
 	</div>
 	<br>
 	</div>
 
-	
-	 <div class="columns is-centered">
+<div class="columns is-centered  is-four-fifths"> 
+    <!-- <div class="columns is-centered is-full-width"> -->
 	<p>
-	  Failure Case: &nbsp; </p>
-	<form method="" action="" name="failureObjectForm">
-	<select size="1" name="switch" onchange="switchFailureVideo();">
-		<option value="0">World Model Failure</option>
-		<option value="1">VLM Behavior Generation Failure</option>
-		<option value="2">VLM Reasoning Failure</option>
+	 <b>In-Distribution</b> : </p>
+	<form method="" action="" name="IDObjectForm">
+	<select size="1" name="switch" onchange="switchIDVideo();">
+		<option value="0">Task 1</option>
+		<option value="1">Task 2 </option>
+		<option value="2">Task 3</option>
+    <option value="3">Task 4</option>
+    <option value="4">Task 5</option>
+    <option value="5">Task 6</option>
+    <option value="6">Task 7</option>
+    <option value="7">Task 8</option>
+    <option value="8">Task 9</option>
+    <option value="9">Task 10</option>
 	</select>
 	</form>
-	</div>
-	<br>
-	
-	<div class="container is-max-desktop has-text-centered">
-		<span id="failure-text" style="color:#5E5E5E"> In this example, the actual execution of the action plan knocks the cup down on the table while the world model mistakenly imagines the robot successfully picks up the cup from the table via the handle. </span>
-	</div>
-</section>
 
+	</div> 
+	<!-- <div class="container is-max-desktop"> -->
+    <div class="column is-one-fourth has-text-centered">
+		<span id="id-text" style="color:#5E5E5E"> Both the training and test instruction is put both the alphabet soup and the tomato sauce in the basket.</span>
+  <!-- </div> -->
+  </div>
 
- <div class="container is-centered is-max-desktop">
-	<video id="real_video_failure"
+ <div class="container has-text-centered is-max-desktop">
+  
+	<video id="id_cases"
 		 controls
 		 muted
 		 preload
 		 playsinline
-		 width="100%">
-		<source src="./static/videos/failure_world_model.mp4"
+
+     autoplay
+		 width="60%">
+		<source src="./static/videos/id/rollout_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket_success_1.mp4"
 				type="video/mp4">
 	</video> 
-<embed type="text/html" src="./static/demos/failure/failure-1.html" width="35%" height="500" id="real_plot_failure">
 </div>
-<br> <br> --> 
-
-<!-- <section class="section">
-	<div class="columns is-centered">
-		<h2 class="title is-3"><span class="dnerf"> Failure Modes &nbsp; </span> with Interactive Visualizations&nbsp; </h2>
+<br> <br>
+</section>
+<section class="section">
+	<div class="container is-max-desktop">
+	<div class="columns">
+		<h3 class="title is-4"> Novel Behavior Composition Tasks </h3>
 	</div>
 	<br>
-	
-	<div class="container is-max-desktop has-text-centered">
+  <p>As shown in the figure above, with reasoning-action alignment, <b>SEAL (our method)</b> obtains even larger performance gains over reasoning VLAs on novel behavior composition tasks compared to ID tasks.</p>
+	<br>
+	<div class="columns is-centered is-two-fifths">
 		<span>
-			<b> Interactive Visuliazation: </b>&nbsp; Drag the slider to visualize different timesteps. 
-			Click on the legends <strong>on the plot</strong> to show/hide elements.
+			<b> Interactive Visuliazation: </b>&nbsp; Drag the slider to visualize novel behavior composition tasks for each task in LIBERO-10.
 		</span>
 	</div>
-  	<br> -->
-	
-<!--
-	<div class="columns is-centered">
-		<h3 class="title is-4"> Notations </h3>
+	<br>
 	</div>
--->
-	
-	<!-- <div class="container is-max-desktop">
-	  <img src="static/figures/plotly_notations.png" alt="Legend notations">
-	</div>
-	<br> -->
-<!-- 	
-	<div class="columns is-centered">
+
+<div class="columns is-centered  is-four-fifths"> 
+    <!-- <div class="columns is-centered is-full-width"> -->
 	<p>
-	  Object: &nbsp; </p>
-	<form method="" action="" name="simObjectForm">
-	<select size="1" name="switch" onchange="switchSimVideo();">
-		<option value="0">Tape</option>
-		<option value="1">Cup</option>
-		<option value="2">Cube</option>
-		<option value="3">Pill Bottle</option>
-		<option value="4">Teapot</option>
+	 <b>Behavior Composition</b> : </p>
+	<form method="" action="" name="ComposeObjectForm">
+	<select size="1" name="switch" onchange="switchComposeVideo();">
+		<option value="0">Task 1</option>
+		<option value="1">Task 2 </option>
+		<option value="2">Task 3</option>
+    <option value="3">Task 4</option>
+    <option value="4">Task 5</option>
+    <option value="5">Task 6</option>
+    <option value="6">Task 7</option>
+    <option value="7">Task 8</option>
+    <option value="8">Task 9</option>
+    <option value="9">Task 10</option>
+    <option value="10">Task 11</option>
+    <option value="11">Task 12</option>
+    <option value="12">Task 13</option>
 	</select>
 	</form>
-	</div>
-	 -->
-	
-<!-- </section>
 
-<div class="is-centered columns">
-	<video id="sim_video"
+	</div> 
+	<!-- <div class="container is-max-desktop"> -->
+    <div class="column is-one-fourth has-text-centered">
+		<span id="compose-text" style="color:#5E5E5E"> The training instruction is 1. put both the cream cheese box and the butter in the basket. 2. put the alphabet soup in the basket. <br>The test instruction is put both the alphabet soup and the butter in the basket.</span>
+  <!-- </div> -->
+  </div>
+
+ <div class="container has-text-centered is-max-desktop">
+  
+	<video id="compose_cases"
 		 controls
 		 muted
 		 preload
 		 playsinline
-		 height="640px"
-		 width="55%">
-		<source src="./static/demos/sim/tape.mp4"
+
+     autoplay
+		 width="60%">
+		<source src="./static/videos/compose/rollout_put_both_the_alphabet_soup_and_the_butter_in_the_basket_real_exec_5_success_length_234.mp4"
 				type="video/mp4">
-	</video>
-	<embed type="text/html" src="./static/demos/sim/tape.html" width="40%" height="640px" id="sim_plot">
+	</video> 
 </div>
+<br> <br>
+</section>
+<section class="section">
+	<div class="container is-max-desktop">
+	<div class="columns">
+		<h3 class="title is-4"> Out-of-Distribution Scenarios </h3>
+	</div>
+	<br>
+  <p><b>SEAL (our method)</b> is more robust to various OOD shifts (including semantic and visual changes) than other baselines</p>
+  <img src="static/figures/libero_ood.png" alt="OOD Types Figure">
+  <br><br>
 	
-<br> <br> -->
+	<div class="columns is-centered is-two-fifths">
+		<span>
+			<b> Interactive Visuliazation: </b>&nbsp; Drag the slider to visualize out-of-distribution scenarios for each task in LIBERO-10.
+		</span>
+	</div>
+	<br>
+	</div>
 
+<div class="columns is-centered  is-four-fifths"> 
+    <!-- <div class="columns is-centered is-full-width"> -->
+	<p>
+	 <b>Semantic OOD (Lang-Rephrase)</b> : rephrase the task instruction but keep the object description the same.&nbsp; </p>
+	<form method="" action="" name="semanticood1ObjectForm">
+	<select size="1" name="switch" onchange="switchSemanticOOD1Video();">
+		<option value="0">Task 1</option>
+		<option value="1">Task 2 </option>
+		<option value="2">Task 3</option>
+    <option value="3">Task 4</option>
+    <option value="4">Task 5</option>
+    <option value="5">Task 6</option>
+    <option value="6">Task 7</option>
+    <option value="7">Task 8</option>
+    <option value="8">Task 9</option>
+    <option value="9">Task 10</option>
+	</select>
+	</form>
 
-<!-- <section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@misc{wu2025forewarn,
-		title={From Foresight to Forethought: VLM-In-the-Loop Policy Steering via Latent Alignment}, 
-		author={Yilin Wu and Ran Tian and Gokul Swamy and Andrea Bajcsy},
-		year={2025},
-		eprint={2502.01828},
-		archivePrefix={arXiv},
-		primaryClass={cs.RO},
-		url={https://arxiv.org/abs/2502.01828}, 
-  
-}</code></pre>
+	</div> 
+	<!-- <div class="container is-max-desktop"> -->
+    <div class="column is-one-fourth has-text-centered">
+		<span id="semantic_ood1-text" style="color:#5E5E5E"> The training instruction is put both the alphabet soup and the tomato sauce in the basket.<br> The test instruction is place the alphabet soup in the basket and the tomato sauce as well</span>
+  <!-- </div> -->
   </div>
-</section> -->
 
+ <div class="container has-text-centered is-max-desktop">
+  
+	<video id="semantic_ood1_cases"
+		 controls
+		 muted
+		 preload
+		 playsinline
 
+     autoplay
+		 width="60%">
+		<source src="./static/videos/semantic_1/rollout_place_the_alphabet_soup_in_the_basket_and_the_tomato_sauce_as_well_real_exec_1_success_length_214.mp4"
+				type="video/mp4">
+	</video> 
+</div>
+<br> <br>
+<div class="columns is-centered  is-four-fifths"> 
+    <!-- <div class="columns is-centered is-full-width"> -->
+	<p>
+	 <b>Semantic OOD (Lang-Object-Property)</b> : only change the object description.&nbsp; </p>
+	<form method="" action="" name="semanticood2ObjectForm">
+	<select size="1" name="switch" onchange="switchSemanticOOD2Video();">
+		<option value="0">Task 1</option>
+		<option value="1">Task 2 </option>
+		<option value="2">Task 3</option>
+    <option value="3">Task 4</option>
+    <option value="4">Task 5</option>
+    <option value="5">Task 6</option>
+    <option value="6">Task 7</option>
+    <option value="7">Task 8</option>
+    <option value="8">Task 9</option>
+    <option value="9">Task 10</option>
+	</select>
+	</form>
+
+	</div> 
+	<!-- <div class="container is-max-desktop"> -->
+    <div class="column is-one-fourth has-text-centered">
+		<span id="semantic_ood2-text" style="color:#5E5E5E"> The training instruction is put both the alphabet soup and the tomato sauce in the basket. <br> The test instruction is put both the can of soup and the can of sauce in the basket.</span>
+  <!-- </div> -->
+  </div>
+
+ <div class="container has-text-centered is-max-desktop">
+  
+	<video id="semantic_ood2_cases"
+		 controls
+		 muted
+		 preload
+		 playsinline
+
+     autoplay
+		 width="60%">
+		<source src="./static/videos/semantic_2/rollout_put_both_the_can_of_soup_and_can_of_sauce_in_the_basket_real_exec_30_success_length_233.mp4"
+				type="video/mp4">
+	</video> 
+</div>
+<br> <br>
+<div class="columns is-centered  is-four-fifths"> 
+    <!-- <div class="columns is-centered is-full-width"> -->
+	<p>
+	 <b>Visual OOD (Visual-Scene)</b> : only replace or add the distractor object.&nbsp; </p>
+	<form method="" action="" name="visualcood1ObjectForm">
+	<select size="1" name="switch" onchange="switchVisualOOD1Video();">
+		<option value="0">Task 1</option>
+		<option value="1">Task 2 </option>
+		<option value="2">Task 3</option>
+    <option value="3">Task 4</option>
+    <option value="4">Task 5</option>
+    <option value="5">Task 6</option>
+    <option value="6">Task 7</option>
+    <option value="7">Task 8</option>
+    <option value="8">Task 9</option>
+    <option value="9">Task 10</option>
+	</select>
+	</form>
+
+	</div> 
+	<!-- <div class="container is-max-desktop"> -->
+    <div class="column is-one-fourth has-text-centered">
+		<span id="visual_ood1-text" style="color:#5E5E5E"> Both training and test instruction is put both the alphabet soup and the tomato sauce in the basket.</span>
+  <!-- </div> -->
+  </div>
+
+ <div class="container has-text-centered is-max-desktop">
+  
+	<video id="visual_ood1_cases"
+		 controls
+		 muted
+		 preload
+		 playsinline
+
+     autoplay
+		 width="60%">
+		<source src="./static/videos/visual_1/rollout__put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket_real_exec_20_success_length_246.mp4"
+				type="video/mp4">
+	</video> 
+</div>
+<br> <br>
+<div class="columns is-centered  is-four-fifths"> 
+    <!-- <div class="columns is-centered is-full-width"> -->
+	<p>
+	 <b>Visual OOD (Visual-Viewpoint)</b> : change the background and the camera pose.&nbsp; </p>
+	<form method="" action="" name="visualcood2ObjectForm">
+	<select size="1" name="switch" onchange="switchVisualOOD2Video();">
+		<option value="0">Task 1</option>
+		<option value="1">Task 2 </option>
+		<option value="2">Task 3</option>
+    <option value="3">Task 4</option>
+    <option value="4">Task 5</option>
+    <option value="5">Task 6</option>
+    <option value="6">Task 7</option>
+    <option value="7">Task 8</option>
+    <option value="8">Task 9</option>
+    <option value="9">Task 10</option>
+	</select>
+	</form>
+
+	</div> 
+	<!-- <div class="container is-max-desktop"> -->
+    <div class="column is-one-fourth has-text-centered">
+		<span id="visual_ood2-text" style="color:#5E5E5E"> Both training and test instruction is put both the alphabet soup and the tomato sauce in the basket.</span>
+  <!-- </div> -->
+  </div>
+
+ <div class="container has-text-centered is-max-desktop">
+  
+	<video id="visual_ood2_cases"
+		 controls
+		 muted
+		 preload
+		 playsinline
+
+     autoplay
+		 width="60%">
+		<source src="./static/videos/visual_2/rollout_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket_real_exec_20_success_length_486.mp4"
+				type="video/mp4">
+  </video> 
+</div>
+<br> <br>
+</section>
 
 <footer class="footer">
   <div class="container">
-<!--
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
--->
+
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">

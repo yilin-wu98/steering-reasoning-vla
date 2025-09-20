@@ -170,3 +170,7 @@ body {
 	margin-left: 0px;
 	margin-right: auto;
 }
+
+#semantic_ood1-text { white-space: pre-line; }
+#semantic_ood2-text { white-space: pre-line; }
+#compose-text { white-space: pre-line; }
